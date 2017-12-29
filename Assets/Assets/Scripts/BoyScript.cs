@@ -15,6 +15,7 @@ public class BoyScript : MonoBehaviour
     [SerializeField] private GameObject boyAttackZone;
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject target;
+    private float distance;
 
     private bool isAttacking = false;
 
@@ -29,13 +30,25 @@ public class BoyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-        
+        distance = Vector3.Distance(transform.position, target.transform.position);
+        Debug.Log
+
+        if(isAttacking)
+        {
+            enemyState = EnemyState.ATTACK;
+        }
+        else
+        {
+            enemyState = EnemyState.WALK;
+        }
+
         switch (enemyState)
         {
             case EnemyState.WALK:
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
                 break;
             case EnemyState.ATTACK:
+
                 break;
         }
 

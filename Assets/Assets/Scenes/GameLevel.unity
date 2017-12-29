@@ -258,8 +258,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 632072890}
-  - component: {fileID: 632072891}
-  - component: {fileID: 632072892}
   m_Layer: 0
   m_Name: SnowballSpawn
   m_TagString: Untagged
@@ -280,35 +278,6 @@ Transform:
   m_Father: {fileID: 1837352728}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &632072891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632072889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164d6254b644b3c4b98e00e29c2a109f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 2104837858}
-  gunTransform: {fileID: 0}
-  snowballSpawnTransform: {fileID: 632072890}
-  snowballPrefab: {fileID: 1157834416454458, guid: bc7264df36efe00418e4a1ce6937c586,
-    type: 2}
-  snowballSpeed: 2
-  timeToThrow: 2
---- !u!114 &632072892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632072889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64732c83aedd8ec4596eff794680bb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &893110237
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +688,7 @@ GameObject:
   - component: {fileID: 1529871753}
   - component: {fileID: 1529871754}
   m_Layer: 0
-  m_Name: BoyAttackZone
+  m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c19da92b8dc5c44bdc9e0b7619f814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowballSpawn: {fileID: 0}
+  snowballSpawn: {fileID: 632072889}
+  boyAttackZone: {fileID: 1529871752}
   moveSpeed: 1
   target: {fileID: 2104837856}
 --- !u!1 &2104837856
