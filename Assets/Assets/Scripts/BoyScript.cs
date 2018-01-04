@@ -21,6 +21,8 @@ public class BoyScript : MonoBehaviour
 
     private EnemyState enemyState = EnemyState.WALK;
 
+    [SerializeField] private EnemySnowballSpawnScrpit enemySnowballSpawn;
+
     // Use this for initialization
     void Start()
     {
@@ -31,9 +33,19 @@ public class BoyScript : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(transform.position, target.transform.position);
-        Debug.Log
+        //Debug.Log("Distance" + distance);
 
-        if(isAttacking)
+        if (distance <= 5.00)
+        {
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false;
+        }
+        //Debug.Log("is Attacking " + isAttacking);
+
+        if (isAttacking)
         {
             enemyState = EnemyState.ATTACK;
         }
@@ -48,9 +60,10 @@ public class BoyScript : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
                 break;
             case EnemyState.ATTACK:
-
+                enemySnowballSpawn.Attack();
                 break;
         }
 
-	}
+    }
+
 }
