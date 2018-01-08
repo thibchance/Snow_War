@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Chien : MonoBehaviour {
+public class DogScript : MonoBehaviour {
 
 
 

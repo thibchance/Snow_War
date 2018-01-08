@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chat : MonoBehaviour {
+public class CatScript : MonoBehaviour {
 
 
 

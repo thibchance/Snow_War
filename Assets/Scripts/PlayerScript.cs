@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
+
+    [SerializeField]
+    GameObject bullet;
+    [SerializeField]
+    GameObject BulletPosition;
     [SerializeField] float speed;
 
     private Rigidbody2D body;
@@ -18,11 +23,37 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal * speed,
-                                       moveVertical * speed);
+        if (Input.GetKeyDown("space"))
+        {
+            GameObject bullet01 = (GameObject)Instantiate(bullet);
+            bullet01.transform.position = BulletPosition.transform.position;
+        }
 
-        body.velocity = movement;
+
+        
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        Vector2 movement = new Vector2(moveHorizontal,
+                                      moveVertical).normalized; 
+
+       
+        //body.velocity = movement;
+    }
+    private void Move(Vector2 Direction)
+    {
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        min.x = min.x + 0.225f;
+        max.x = max.x + 0.225f;
+
+        Vector2 pos = transform.position;
+
+        pos += Direction * speed * Time.deltaTime;
+
+        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+        pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+
+        transform.position = pos;
     }
 }
