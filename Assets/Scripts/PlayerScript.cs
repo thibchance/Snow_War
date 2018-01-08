@@ -34,12 +34,12 @@ public class PlayerScript : MonoBehaviour {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector2 movement = new Vector2(moveHorizontal,
-                                      moveVertical).normalized; 
+                                      moveVertical).normalized;
 
-       
-        //body.velocity = movement;
+        //Move(direction);
+        body.velocity = movement;
     }
-    private void Move(Vector2 Direction)
+   void Move(Vector2 direction)
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour {
 
         Vector2 pos = transform.position;
 
-        pos += Direction * speed * Time.deltaTime;
+        pos += direction * speed * Time.deltaTime;
 
         pos.x = Mathf.Clamp(pos.x, min.x, max.x);
         pos.y = Mathf.Clamp(pos.y, min.y, max.y);
