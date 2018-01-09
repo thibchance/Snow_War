@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrosGarcon : MonoBehaviour {
+public class BigBoyScript : MonoBehaviour {
 
     [SerializeField]
     Transform Player;

@@ -32,7 +32,7 @@ public class BoyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(transform.position, target.transform.position);
+        distance = Vector2.Distance(transform.position, target.transform.position);
         //Debug.Log("Distance" + distance);
 
         if (distance <= 5.00)
@@ -57,7 +57,7 @@ public class BoyScript : MonoBehaviour
         switch (enemyState)
         {
             case EnemyState.WALK:
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
                 break;
             case EnemyState.ATTACK:
                 spawnScript.Attack();

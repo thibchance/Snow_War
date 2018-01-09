@@ -9,7 +9,8 @@ public class PlayerScript : MonoBehaviour {
     GameObject bullet;
     [SerializeField]
     GameObject BulletPosition;
-    [SerializeField] float speed;
+    [SerializeField]
+    float speed;
 
     private Rigidbody2D body;
 
@@ -18,6 +19,7 @@ public class PlayerScript : MonoBehaviour {
     void Start ()
     {
         body = GetComponent<Rigidbody2D>();
+        
     }
 	
 	// Update is called once per frame
@@ -31,15 +33,16 @@ public class PlayerScript : MonoBehaviour {
 
 
         
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal,
-                                      moveVertical).normalized;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(moveHorizontal*speed,
+                                      moveVertical*speed);
 
         //Move(direction);
         body.velocity = movement;
     }
-   void Move(Vector2 direction)
+
+   private  void Move(Vector2 direction)
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
