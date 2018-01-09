@@ -25,14 +25,13 @@ public class SpawnScript : MonoBehaviour
     {
         snowballSpawn.rotation = Quaternion.LookRotation(Vector3.forward, playerTransform.position - snowballSpawn.position);
     }
-
     public void Attack()
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
         {
             GameObject Snowball = Instantiate(snowballPrefab, snowballSpawn.position, snowballSpawn.rotation);
 
-            Snowball.GetComponent<Rigidbody2D>().velocity = snowballSpawn.right * snowballSpeed;
+            Snowball.GetComponent<Rigidbody2D>().velocity = snowballSpawn.up * snowballSpeed;
             Destroy(Snowball, 5);
             lastTimeThrow = Time.realtimeSinceStartup;
         }
