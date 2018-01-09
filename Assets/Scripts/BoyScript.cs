@@ -22,6 +22,10 @@ public class BoyScript : MonoBehaviour
     private EnemyState enemyState = EnemyState.WALK;
 
     [SerializeField] private SpawnScript spawnScript;
+    [SerializeField] private GameManager gameManager;
+
+    private int health = 3;
+    private int deadpoints = 100;
 
     // Use this for initialization
     void Start()
@@ -64,6 +68,20 @@ public class BoyScript : MonoBehaviour
                 break;
         }
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            gameManager.score = gameManager.score + deadpoints;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SnowballPlayer")
+        {
+            health = health - 1;
+        }
     }
 
 }

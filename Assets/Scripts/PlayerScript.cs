@@ -48,13 +48,11 @@ public class PlayerScript : MonoBehaviour {
         //    Debug.Log("souris");
         //    Instantiate(bullet, transform.position, transform.rotation);
         //}
-        //Vector3 rotation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //rotation.z = 10;
-        //Bullet.position = rotation;
-        
-        
-        
-        Bulletspawn.rotation = Quaternion.LookRotation(Vector3.forward, Bulletspawn.position);
+       
+
+
+
+      //  Bulletspawn.rotation = Quaternion.LookRotation(Vector3.forward, Bulletspawn.position);
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -70,6 +68,7 @@ public class PlayerScript : MonoBehaviour {
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
 
+
         {
             GameObject Snowball = Instantiate(bullet, Bulletspawn.position, Bulletspawn.rotation);
 
@@ -78,7 +77,9 @@ public class PlayerScript : MonoBehaviour {
             lastTimeThrow = Time.realtimeSinceStartup;
         }
     }
-    private  void Move(Vector2 direction)
+    //private  void Move(Vector2 direction)
+    /*private  void Move(Vector2 direction)
+>>>>>>> b84b8f68adf277d808ba3a738cfbcc6932f4fb77
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
@@ -94,5 +95,5 @@ public class PlayerScript : MonoBehaviour {
         pos.y = Mathf.Clamp(pos.y, min.y, max.y);
 
         transform.position = pos;
-    }
+    }*/
 }

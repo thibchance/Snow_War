@@ -4,27 +4,19 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class DogScript : MonoBehaviour {
+public class DogScript : MonoBehaviour
+{
 
 
+    [SerializeField] Transform Player;
+    [SerializeField] float movespeed = 1f;
 
+    [SerializeField] GameManager gameManager;
 
-    //[Header("Velocity")]
-    //[SerializeField]
-    //float Velocity_X;
-    //[SerializeField]
-    //float Velocity_Y;
+    //Vector2 Destination;
 
-
-    [SerializeField]
-    Transform Player;
-    [SerializeField]
-    float movespeed = 1f;
-    // private Transform transform;
-
-
-
-    Vector2 Destination;
+    private int health = 2;
+    private int deadpoints = 50;
     
     // Use this for initialization
     void Start ()
@@ -38,7 +30,20 @@ public class DogScript : MonoBehaviour {
 
         transform.position = Vector2.MoveTowards(transform.position, Player.position, movespeed*Time.deltaTime);
 
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+            gameManager.score = gameManager.score + deadpoints;
+        }
         
            
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SnowballPlayer")
+        {
+            health = health - 1;
+        }
+    }
 }
