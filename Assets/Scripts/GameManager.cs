@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     Text textscore;
-    private const string TEXT_SCORE = " ";
+    private const string TEXT_SCORE = "score =  ";
 
     // Use this for initialization
     void Start ()
