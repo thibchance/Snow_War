@@ -29,6 +29,7 @@ public class SpawnScript : MonoBehaviour
     public void Attack()
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
+
         {
             GameObject Snowball = Instantiate(snowballPrefab, snowballSpawn.position, snowballSpawn.rotation);
 

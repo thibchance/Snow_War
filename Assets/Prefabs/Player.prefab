@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4104838010978778}
   - component: {fileID: 212101858620941316}
   - component: {fileID: 114054902986103224}
+  - component: {fileID: 114875676036274408}
   - component: {fileID: 50129388755939534}
   - component: {fileID: 61830131525540774}
   m_Layer: 0
@@ -215,6 +216,21 @@ MonoBehaviour:
   bullet: {fileID: 1305563720701706, guid: 964a4384829a7934f9dedb1cc01648de, type: 2}
   BulletPosition: {fileID: 1902762548892834}
   speed: 3
+  Bulletspawn: {fileID: 0}
+  snowballSpeed: 0
+  timeToThrow: 2
+  lastTimeThrow: 0
+--- !u!114 &114875676036274408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173092034881212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d378f3f1afbbe4c91eac34b303b183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212101858620941316
 SpriteRenderer:
   m_ObjectHideFlags: 1
