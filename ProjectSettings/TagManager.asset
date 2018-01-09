@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hit
   - move
+  - SnowballPlayer
   layers:
   - Default
   - TransparentFX
