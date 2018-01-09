@@ -243,11 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9c92381f7f97f45968cb61a84d6557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1883638899835918, guid: 964a4384829a7934f9dedb1cc01648de, type: 2}
+  bullet: {fileID: 1807192611903954, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}
   BulletPosition: {fileID: 1902762548892834}
   speed: 3
   Bulletspawn: {fileID: 4706173097072626}
-  snowballSpeed: 3
+  snowballSpeed: 5
   timeToThrow: 2
   lastTimeThrow: 0
 --- !u!114 &114799394699715118
