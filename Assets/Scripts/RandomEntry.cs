@@ -31,8 +31,7 @@ public class RandomEntry : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (GameObject.Find("ennemi(Clone)") == null)
-        {
+       
 
 
             spawntime += Time.deltaTime;
@@ -42,7 +41,7 @@ public class RandomEntry : MonoBehaviour {
                 Dog();
             }
 
-        }
+        
 
      
     }
