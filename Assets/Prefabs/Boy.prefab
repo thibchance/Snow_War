@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114255348507859930}
   m_Layer: 0
   m_Name: Boy
-  m_TagString: Untagged
+  m_TagString: ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308345735839894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.7306705, y: -0.9519963, z: 0.030013261}
   m_LocalScale: {x: 0.64515543, y: 0.72864795, z: 1}
   m_Children:
   - {fileID: 4480569564521416}

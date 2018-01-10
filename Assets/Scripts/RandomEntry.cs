@@ -4,32 +4,66 @@ using UnityEngine;
 
 public class RandomEntry : MonoBehaviour {
 
+    [SerializeField]
+    GameObject dog;
+    [SerializeField]
+    GameObject ennemies;
+    [SerializeField]
+    Transform spawnentry;
+    [SerializeField]
+    Transform spawn1;
+    float spawntime;
+    float spawnPeriod = 3f;
 
-    [SerializeField]
-    GameObject[] ennemies;
-    [SerializeField]
-    Transform[] spawnentry;
-	// Use this for initialization
-	void Start ()
+    
+
+
+   
+
+    //private float mintime = 10;
+    //private float maxtime = 40;
+    // Use this for initialization
+    void Start ()
     {
-        SpawnEntryRandom();
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (GameObject.Find("ennemi(Clone)") == null)
+        {
 
+
+            spawntime += Time.deltaTime;
+            if (spawntime >= spawnPeriod)
+            {
+                SpawnEntryRandom();
+                Dog();
+            }
+
+        }
+
+     
+    }
+
+    private void Dog()
+    {
+        Instantiate(dog, spawn1.position, spawn1.rotation);
+        spawntime = 0;
+    }
     private void SpawnEntryRandom()
     {
-        int spawnindex = Random.Range(0, spawnentry.Length);
-        int ennemisindex = Random.Range(0, ennemies.Length);
 
-        for (int i = 0; i < spawnentry.Length; i++)
-        {
-            Instantiate(ennemies[ennemisindex], spawnentry[i].position, spawnentry[0].rotation);
-        }
+       
+        
+        
+            Instantiate(ennemies, spawnentry.position, spawnentry.rotation);
+            spawntime = 0;
+        
+        
+
+
 
     }
 }

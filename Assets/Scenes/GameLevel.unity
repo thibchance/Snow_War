@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -179,7 +180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &22857677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,11 +405,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.26
+      value: 1.6535285
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.78
+      value: 0.7175788
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -416,23 +417,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.99992114
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.012558581
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 181.439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
@@ -561,6 +566,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -981,6 +987,10 @@ Prefab:
     - target: {fileID: 1807192611903954, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}
       propertyPath: m_Name
       value: bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807192611903954, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}

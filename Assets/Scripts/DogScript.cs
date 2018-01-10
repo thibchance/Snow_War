@@ -12,6 +12,7 @@ public class DogScript : MonoBehaviour
     [SerializeField] float movespeed = 1f;
 
     [SerializeField] GameManager gameManager;
+    private Transform playerTransform;
 
     //Vector2 Destination;
 
@@ -21,7 +22,7 @@ public class DogScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-       
+       playerTransform= GameObject.Find("Player").transform;
     }
 	
 	// Update is called once per frame

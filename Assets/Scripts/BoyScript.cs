@@ -23,19 +23,24 @@ public class BoyScript : MonoBehaviour
 
     [SerializeField] private SpawnScript spawnScript;
     [SerializeField] private GameManager gameManager;
-
+     private Transform playerTransform;
     private int health = 3;
     private int deadpoints = 100;
 
     // Use this for initialization
     void Start()
     {
-
+        playerTransform = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        move();
+    }
+    public void move()
+    {
+       
         distance = Vector2.Distance(transform.position, target.transform.position);
         //Debug.Log("Distance" + distance);
 
