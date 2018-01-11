@@ -14,7 +14,7 @@ public class BoyScript : MonoBehaviour
     [SerializeField] private GameObject snowballSpawn;
     [SerializeField] private GameObject boyAttackZone;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private GameObject target;
+  //  [SerializeField] private GameObject target;
     private float distance;
 
     private bool isAttacking = false;
@@ -23,14 +23,17 @@ public class BoyScript : MonoBehaviour
 
     [SerializeField] private SpawnScript spawnScript;
     [SerializeField] private GameManager gameManager;
-     private Transform playerTransform;
+
+
+    [SerializeField] GameObject CoinBonus;
+    private Transform playerTransform;
     private int health = 3;
     private int deadpoints = 100;
 
     // Use this for initialization
     void Start()
     {
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = FindObjectOfType<PlayerScript>().transform;
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class BoyScript : MonoBehaviour
     public void move()
     {
        
-        distance = Vector2.Distance(transform.position, target.transform.position);
+        distance = Vector2.Distance(transform.position, playerTransform.transform.position);
         //Debug.Log("Distance" + distance);
 
         if (distance <= 5.00)
@@ -66,7 +69,7 @@ public class BoyScript : MonoBehaviour
         switch (enemyState)
         {
             case EnemyState.WALK:
-                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime);
                 break;
             case EnemyState.ATTACK:
                 spawnScript.Attack();
@@ -75,10 +78,19 @@ public class BoyScript : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            
+                Destroy(gameObject);
+            
+           
+            RandomBonus();
             gameManager.score = gameManager.score + deadpoints;
         }
 
+    }
+
+    private void RandomBonus()
+    {
+        Instantiate(CoinBonus, transform.position, transform.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665132971387694}
   - component: {fileID: 114190274446360324}
+  - component: {fileID: 114785282951687200}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -51,4 +52,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01301e92f4862b44296c0f3b1068f48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  score: 1250
+--- !u!114 &114785282951687200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023030442826088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2e9f15d3f83994bbea3f3e94f167ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dog: {fileID: 1412226553571538, guid: 23729fc6369fa7d43b0b3f670093a820, type: 2}
+  ennemies: {fileID: 1308345735839894, guid: e91ddc8558f493147958d9cd6f1509ea, type: 2}
+  spawnentry: {fileID: 0}
+  spawn1: {fileID: 0}

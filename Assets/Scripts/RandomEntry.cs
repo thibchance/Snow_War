@@ -31,7 +31,10 @@ public class RandomEntry : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-       
+
+        if (GameObject.Find("ennemi") == null)
+        {
+
 
 
             spawntime += Time.deltaTime;
@@ -41,7 +44,7 @@ public class RandomEntry : MonoBehaviour {
                 Dog();
             }
 
-        
+        }
 
      
     }
@@ -60,9 +63,5 @@ public class RandomEntry : MonoBehaviour {
             Instantiate(ennemies, spawnentry.position, spawnentry.rotation);
             spawntime = 0;
         
-        
-
-
-
     }
 }
