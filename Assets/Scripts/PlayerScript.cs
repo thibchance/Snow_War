@@ -21,7 +21,8 @@ public class PlayerScript : MonoBehaviour {
     float lastTimeThrow;
     private Rigidbody2D body;
 
-
+    private int ScoreCoins = 50;
+    private GameManager gameManager;
     // Use this for initialization
     void Start ()
     {
@@ -77,6 +78,17 @@ public class PlayerScript : MonoBehaviour {
             lastTimeThrow = Time.realtimeSinceStartup;
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "ScoreCoin")
+    //    {
+    //        Destroy(gameObject);
+    //        gameManager.score = gameManager.score + ScoreCoin;
+    //    }
+    //}
+
+
     //private  void Move(Vector2 direction)
     /*private  void Move(Vector2 direction)
 >>>>>>> b84b8f68adf277d808ba3a738cfbcc6932f4fb77

@@ -25,7 +25,8 @@ public class BoyScript : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
 
-    [SerializeField] GameObject CoinBonus;
+    [SerializeField] GameObject[] CoinBonus;
+    
     private Transform playerTransform;
     private int health = 3;
     private int deadpoints = 100;
@@ -76,21 +77,32 @@ public class BoyScript : MonoBehaviour
                 break;
         }
 
+        
+       
         if (health <= 0)
         {
             
-                Destroy(gameObject);
+            Destroy(gameObject);
+            gameManager.score = gameManager.score + deadpoints;
+            CoinsRandom();
+           
             
            
-            RandomBonus();
-            gameManager.score = gameManager.score + deadpoints;
         }
 
     }
 
-    private void RandomBonus()
+    
+   private void CoinsRandom()
     {
-        Instantiate(CoinBonus, transform.position, transform.rotation);
+        int Coins = Random.Range(0, 2);
+        
+        
+       Instantiate(CoinBonus[Coins], transform.position, transform.rotation);
+        
+       
+        
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,6 +111,8 @@ public class BoyScript : MonoBehaviour
         {
             health = health - 1;
         }
+
+        
     }
 
 }

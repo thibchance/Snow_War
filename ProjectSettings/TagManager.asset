@@ -8,6 +8,8 @@ TagManager:
   - move
   - SnowballPlayer
   - ennemi
+  - ScoreCoin
+  - Bonus
   layers:
   - Default
   - TransparentFX
