@@ -23,6 +23,7 @@ public class BoyScript : MonoBehaviour
 
     [SerializeField] private SpawnScript spawnScript;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private DropSystemScript dropSystem;
 
 
     [SerializeField] GameObject[] CoinBonus;
@@ -84,7 +85,9 @@ public class BoyScript : MonoBehaviour
             
             Destroy(gameObject);
             gameManager.score = gameManager.score + deadpoints;
-            CoinsRandom();
+           // CoinsRandom();
+            dropSystem.calculateLoot();
+
            
             
            

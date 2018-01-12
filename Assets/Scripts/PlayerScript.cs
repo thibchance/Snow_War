@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
+public class PlayerScript : MonoBehaviour
+{
 
 
     [SerializeField]
@@ -20,49 +21,40 @@ public class PlayerScript : MonoBehaviour {
     [SerializeField]
     float lastTimeThrow;
     private Rigidbody2D body;
+    private float timeLeft = 20f;
 
     private int ScoreCoins = 50;
     private GameManager gameManager;
+
+    private bool startTimer = false;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        //// if (Input.GetButtonDown("Fire1"))
-        // {
-        //     GameObject bullet01 = (GameObject)Instantiate(bullet);
-        //     bullet01.transform.position = BulletPosition.transform.position;
 
-        //     Vector3 rotation = Camera.main.ScreenToWorldPoint(Input.mousePosition)- transform.position;
-
-
-        // }
-
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //if(Physics.Raycast(ray))
-        //{
-        //    Debug.Log("souris");
-        //    Instantiate(bullet, transform.position, transform.rotation);
-        //}
-       
-
-
-
-      //  Bulletspawn.rotation = Quaternion.LookRotation(Vector3.forward, Bulletspawn.position);
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal*speed,
-                                      moveVertical*speed);
-        //Event e = Event.current;
-        //Vector2 mousePos = new Vector2();
+        Vector2 movement = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
-        //Move(direction);
+        if(startTimer)
+        {
+            timeLeft -= Time.deltaTime;
+            Debug.Log("Chrono" + timeLeft);
+            if (timeLeft < 0)
+            {
+                timeToThrow = 2;
+                startTimer = false;
+                timeLeft = 20f;
+            }
+        }
+
         body.velocity = movement;
     }
     public void Attack()
@@ -79,33 +71,17 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "ScoreCoin")
-    //    {
-    //        Destroy(gameObject);
-    //        gameManager.score = gameManager.score + ScoreCoin;
-    //    }
-    //}
+   
 
-
-    //private  void Move(Vector2 direction)
-    /*private  void Move(Vector2 direction)
->>>>>>> b84b8f68adf277d808ba3a738cfbcc6932f4fb77
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+        if (collision.gameObject.tag == "DoubleSnowball")
+        {
+            timeToThrow /= 2;
+            startTimer = true;
+            Destroy(collision.gameObject);
+        }
 
-        min.x = min.x + 0.225f;
-        max.x = max.x + 0.225f;
 
-        Vector2 pos = transform.position;
-
-        pos += direction * speed * Time.deltaTime;
-
-        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
-        pos.y = Mathf.Clamp(pos.y, min.y, max.y);
-
-        transform.position = pos;
-    }*/
+    }
 }
