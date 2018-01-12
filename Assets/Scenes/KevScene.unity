@@ -384,6 +384,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114255348507859930, guid: e91ddc8558f493147958d9cd6f1509ea,
+        type: 2}
+      propertyPath: dropSystem
+      value: 
+      objectReference: {fileID: 1974928033}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e91ddc8558f493147958d9cd6f1509ea, type: 2}
   m_IsPrefabParent: 0
@@ -587,6 +592,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1858330493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1858330495}
+  - component: {fileID: 1858330494}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1858330494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858330493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78b547160e36f6478fbd60f16661bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinBonus: {fileID: 0}
+  bonusAttack: {fileID: 0}
+--- !u!4 &1858330495
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858330493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14150669, y: -0.14157434, z: -0.15234375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1974928032 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1308345735839894, guid: e91ddc8558f493147958d9cd6f1509ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 1025749964}
+--- !u!114 &1974928033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974928032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78b547160e36f6478fbd60f16661bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinBonus: {fileID: 1378234153158430, guid: c872e83487c715345a93e9f758834353, type: 2}
+  bonusAttack: {fileID: 1136911103832538, guid: b968a137d1634684b8d7537b881a29ef,
+    type: 2}
 --- !u!1 &2066276388
 GameObject:
   m_ObjectHideFlags: 0
