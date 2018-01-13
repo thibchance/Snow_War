@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class QuitButton : MonoBehaviour{
     
-    public void Quit()
+    private void Quit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
         Application.Quit();
-#endif
     }
     
 }

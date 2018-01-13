@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50061523466056984}
   - component: {fileID: 60678236070257778}
   - component: {fileID: 114255348507859930}
+  - component: {fileID: 114913361291988356}
   m_Layer: 0
   m_Name: Boy
   m_TagString: ennemi
@@ -156,9 +157,21 @@ MonoBehaviour:
   spawnScript: {fileID: 114057835844135484}
   gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
     type: 2}
-  CoinBonus:
-  - {fileID: 1378234153158430, guid: c872e83487c715345a93e9f758834353, type: 2}
-  - {fileID: 1136911103832538, guid: b968a137d1634684b8d7537b881a29ef, type: 2}
+  dropSystem: {fileID: 114913361291988356}
+--- !u!114 &114913361291988356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308345735839894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78b547160e36f6478fbd60f16661bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinBonus: {fileID: 1378234153158430, guid: c872e83487c715345a93e9f758834353, type: 2}
+  bonusAttack: {fileID: 1136911103832538, guid: b968a137d1634684b8d7537b881a29ef,
+    type: 2}
 --- !u!212 &212841040095934130
 SpriteRenderer:
   m_ObjectHideFlags: 1

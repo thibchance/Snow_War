@@ -26,7 +26,7 @@ public class BoyScript : MonoBehaviour
     [SerializeField] private DropSystemScript dropSystem;
 
 
-    [SerializeField] GameObject[] CoinBonus;
+    
     
     private Transform playerTransform;
     private int health = 3;
@@ -85,7 +85,7 @@ public class BoyScript : MonoBehaviour
             
             Destroy(gameObject);
             gameManager.score = gameManager.score + deadpoints;
-           // CoinsRandom();
+         
             dropSystem.calculateLoot();
 
            
@@ -96,17 +96,7 @@ public class BoyScript : MonoBehaviour
     }
 
     
-   private void CoinsRandom()
-    {
-        int Coins = Random.Range(0, 2);
-        
-        
-       Instantiate(CoinBonus[Coins], transform.position, transform.rotation);
-        
-       
-        
-      
-    }
+  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
