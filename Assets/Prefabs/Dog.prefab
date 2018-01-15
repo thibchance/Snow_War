@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50524321227410618}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: ennemi
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7b1dd97c24aca4ab2e512fc5d13cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   movespeed: 2
   gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
     type: 2}

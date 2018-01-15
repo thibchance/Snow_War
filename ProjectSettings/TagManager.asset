@@ -11,6 +11,8 @@ TagManager:
   - ScoreCoin
   - Bonus
   - DoubleSnowball
+  - SnowballEnemy
+  - Dog
   layers:
   - Default
   - TransparentFX

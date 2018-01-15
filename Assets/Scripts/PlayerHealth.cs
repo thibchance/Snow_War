@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public float MaxHealth = 100;
+    public float MaxHealth = 10;
     public float Health;
 
     public GameObject healthBar;
@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour {
 	void Start ()
     {
         Health = MaxHealth;
-       
 	}
 	
 	// Update is called once per frame
@@ -21,7 +20,6 @@ public class PlayerHealth : MonoBehaviour {
     {
 		float calculateHealth = Health / MaxHealth;
         SetHealthBar(calculateHealth);
-        Health = Health - 1;
 
         if(Health <=0)
         {
@@ -32,5 +30,10 @@ public class PlayerHealth : MonoBehaviour {
     public void SetHealthBar(float myHealth)
     {
         healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+    }
+
+    public void LoseLife()
+    {
+        Health--;
     }
 }

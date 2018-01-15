@@ -36,6 +36,7 @@ public class BoyScript : MonoBehaviour
     void Start()
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -86,11 +87,7 @@ public class BoyScript : MonoBehaviour
             Destroy(gameObject);
             gameManager.score = gameManager.score + deadpoints;
          
-            dropSystem.calculateLoot();
-
-           
-            
-           
+            dropSystem.calculateLoot();  
         }
 
     }
@@ -103,6 +100,7 @@ public class BoyScript : MonoBehaviour
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
+            Destroy(collision.gameObject);
         }
 
         

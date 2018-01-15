@@ -23,6 +23,7 @@ public class DogScript : MonoBehaviour
     void Start ()
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
+        gameManager = FindObjectOfType<GameManager>();
     }
 	
 	// Update is called once per frame

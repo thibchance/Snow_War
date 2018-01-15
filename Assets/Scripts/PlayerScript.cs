@@ -23,15 +23,17 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D body;
     private float timeLeft = 20f;
 
-    private int ScoreCoins = 50;
+    private int ScoreCoins = 100;
     private GameManager gameManager;
+    private PlayerHealth playerHealth;
 
     private bool startTimer = false;
     // Use this for initialization
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-
+        playerHealth = FindObjectOfType<PlayerHealth>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -79,6 +81,23 @@ public class PlayerScript : MonoBehaviour
         {
             timeToThrow /= 2;
             startTimer = true;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "SnowballEnemy")
+        {
+            playerHealth.LoseLife();
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Dog")
+        {
+            playerHealth.LoseLife();
+        }
+
+        if (collision.gameObject.tag == "ScoreCoin")
+        {
+            gameManager.score = gameManager.score + ScoreCoins;
             Destroy(collision.gameObject);
         }
 
