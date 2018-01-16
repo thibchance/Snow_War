@@ -46,6 +46,7 @@ public class DogScript : MonoBehaviour
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
+            Destroy(collision.gameObject);
         }
     }
 }
