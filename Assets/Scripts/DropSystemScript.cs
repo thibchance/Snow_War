@@ -7,6 +7,7 @@ public class DropSystemScript : MonoBehaviour
     [SerializeField] GameObject CoinBonus;
     [SerializeField] GameObject bonusAttack;
 
+
     int coins;
 
     public void calculateLoot()

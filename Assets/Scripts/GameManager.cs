@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log("score" + score);
+        //Debug.Log("score" + score);
         textscore.text = TEXT_SCORE + score;
     }
 }

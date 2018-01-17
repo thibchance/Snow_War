@@ -56,12 +56,7 @@ public class RandomEntry : MonoBehaviour {
     }
     private void SpawnEntryRandom()
     {
-
-       
-        
-        
-            Instantiate(ennemies, spawnentry.position, spawnentry.rotation);
-            spawntime = 0;
-        
+        Instantiate(ennemies, spawnentry.position, spawnentry.rotation);
+        spawntime = 0;
     }
 }

@@ -29,7 +29,7 @@ public class BoyScript : MonoBehaviour
     
     
     private Transform playerTransform;
-    private int health = 3;
+    private int health = 2;
     private int deadpoints = 100;
 
     // Use this for initialization
@@ -50,7 +50,7 @@ public class BoyScript : MonoBehaviour
         distance = Vector2.Distance(transform.position, playerTransform.transform.position);
         //Debug.Log("Distance" + distance);
 
-        if (distance <= 5.00)
+        if (distance <= 10.00)
         {
             isAttacking = true;
         }
@@ -91,9 +91,6 @@ public class BoyScript : MonoBehaviour
         }
 
     }
-
-    
-  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

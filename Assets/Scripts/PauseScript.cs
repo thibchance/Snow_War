@@ -26,7 +26,7 @@ public class PauseScript : MonoBehaviour
         {
             isinpause = true;
             panelpause.SetActive(true);
-            uigamepanel.SetActive(false);
+            //uigamepanel.SetActive(false);
             Time.timeScale = 0;
         }
     }
@@ -34,7 +34,7 @@ public class PauseScript : MonoBehaviour
     {
         isinpause = false;
         panelpause.SetActive(false);
-        uigamepanel.SetActive(true);
+        //uigamepanel.SetActive(true);
         Time.timeScale = 1;
     }
 }

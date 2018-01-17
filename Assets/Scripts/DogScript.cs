@@ -16,7 +16,7 @@ public class DogScript : MonoBehaviour
 
     //Vector2 Destination;
 
-    private int health = 2;
+    private int health = 1;
     private int deadpoints = 50;
     
     // Use this for initialization
