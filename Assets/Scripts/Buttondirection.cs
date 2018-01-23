@@ -6,11 +6,20 @@ using UnityEngine.SceneManagement;
 public class Buttondirection : MonoBehaviour
 {
 
-    public void MAMAMAMAMA()
+    public void ButtonStart()
     {
 
         SceneManager.LoadScene("GameLevel");
 
+    }
+
+    public void ButtonCredit()
+    {
+        SceneManager.LoadScene("CreditMenu");
+    }
+    public void ButtonRetour()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
 	
