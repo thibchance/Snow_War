@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     private int ScoreCoins = 100;
     private GameManager gameManager;
     private PlayerHealth playerHealth;
+    
 
     private bool startTimer = false;
     // Use this for initialization
@@ -34,6 +35,7 @@ public class PlayerScript : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -43,6 +45,9 @@ public class PlayerScript : MonoBehaviour
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        
+
+
         Vector2 movement = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
         if(startTimer)
@@ -87,12 +92,15 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "SnowballEnemy")
         {
             playerHealth.LoseLife();
+            
             Destroy(collision.gameObject);
+
         }
 
         if (collision.gameObject.tag == "Dog")
         {
             playerHealth.LoseLife();
+            
         }
 
         if (collision.gameObject.tag == "ScoreCoin")

@@ -26,8 +26,8 @@ public class BoyScript : MonoBehaviour
     [SerializeField] private DropSystemScript dropSystem;
 
 
-    
-    
+
+    private PlayerEnergyBar playerEnergy;
     private Transform playerTransform;
     private int health = 2;
     private int deadpoints = 100;
@@ -37,6 +37,7 @@ public class BoyScript : MonoBehaviour
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
         gameManager = FindObjectOfType<GameManager>();
+        playerEnergy = FindObjectOfType<PlayerEnergyBar>();
     }
 
     // Update is called once per frame
@@ -85,6 +86,8 @@ public class BoyScript : MonoBehaviour
         {
             
             Destroy(gameObject);
+            playerEnergy.WinEnergy();
+
             gameManager.score = gameManager.score + deadpoints;
          
             dropSystem.calculateLoot();  
@@ -98,6 +101,7 @@ public class BoyScript : MonoBehaviour
         {
             health = health - 1;
             Destroy(collision.gameObject);
+            
         }
 
         
