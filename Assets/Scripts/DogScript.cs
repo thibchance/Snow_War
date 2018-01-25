@@ -15,7 +15,7 @@ public class DogScript : MonoBehaviour
     private Transform playerTransform;
 
     //Vector2 Destination;
-
+    private PlayerEnergyBar playerEnergy;
     private int health = 1;
     private int deadpoints = 50;
     
@@ -24,6 +24,7 @@ public class DogScript : MonoBehaviour
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
         gameManager = FindObjectOfType<GameManager>();
+        playerEnergy = FindObjectOfType<PlayerEnergyBar>();
     }
 	
 	// Update is called once per frame
@@ -35,6 +36,7 @@ public class DogScript : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
         }
         

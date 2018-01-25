@@ -70,6 +70,8 @@ MonoBehaviour:
   Energy: 0
   energymax: 1
   EnergyBar: {fileID: 1330664198662534}
+  EnergiLimit: 10
+  imagebar: {fileID: 0}
 --- !u!222 &222691269946342306
 CanvasRenderer:
   m_ObjectHideFlags: 1
