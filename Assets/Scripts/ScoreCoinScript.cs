@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScoreCoinScript : MonoBehaviour {
 
-
     private GameManager gameManager;
     private int ScoreCoin = 100;
+
     // Use this for initialization
     void Start ()
     {

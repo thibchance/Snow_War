@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BigBoyScript : MonoBehaviour {
 
-    [SerializeField]
-    Transform Player;
+    [SerializeField] Transform Player;
    
-    [SerializeField]
-    float movespeed = 1f;
+    [SerializeField] float movespeed = 1f;
+
     // Use this for initialization
     void Start ()
     {
@@ -20,6 +19,7 @@ public class BigBoyScript : MonoBehaviour {
     {
         transform.position = Vector2.MoveTowards(transform.position, Player.position, movespeed * Time.deltaTime);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "move")

@@ -2,30 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
-{
+public class PlayerScript : MonoBehaviour{
 
+    [SerializeField] GameObject bullet;
 
-    [SerializeField]
-    GameObject bullet;
+    [SerializeField] GameObject BulletPosition;
 
-    [SerializeField]
-    GameObject BulletPosition;
+    [SerializeField] float speed;
 
-    [SerializeField]
-    float speed;
+    [SerializeField] Transform Bulletspawn;
 
-    [SerializeField]
-    Transform Bulletspawn;
+    [SerializeField] float snowballSpeed;
 
-    [SerializeField]
-    float snowballSpeed;
+    [SerializeField] float timeToThrow = 2;
 
-    [SerializeField]
-    float timeToThrow = 2;
-
-    [SerializeField]
-    float lastTimeThrow;
+    [SerializeField] float lastTimeThrow;
 
     private Rigidbody2D body;
     private float timeLeft = 20f;
@@ -55,6 +46,7 @@ public class PlayerScript : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             Debug.Log("Chrono" + timeLeft);
+
             if (timeLeft < 0)
             {
                 timeToThrow = 2;
@@ -68,17 +60,13 @@ public class PlayerScript : MonoBehaviour
     public void Attack()
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
-
         {
             GameObject Snowball = Instantiate(bullet, Bulletspawn.position, Bulletspawn.rotation);
-
             Snowball.GetComponent<Rigidbody2D>().velocity = Bulletspawn.right * snowballSpeed;
             Destroy(Snowball, 5);
             lastTimeThrow = Time.realtimeSinceStartup;
         }
     }
-
-   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -92,7 +80,6 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "SnowballEnemy")
         {
             playerHealth.LoseLife();
-            
             Destroy(collision.gameObject);
         }
 

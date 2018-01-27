@@ -7,7 +7,6 @@ public class PlayerHealth : MonoBehaviour {
 
     public float MaxHealth = 10;
     public float Health;
-
     public GameObject healthBar;
 
 	// Use this for initialization

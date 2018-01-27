@@ -4,16 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class DogScript : MonoBehaviour
-{
+public class DogScript : MonoBehaviour{
 
-
-    
     [SerializeField] float movespeed = 1f;
 
     [SerializeField] GameManager gameManager;
-    private Transform playerTransform;
 
+    private Transform playerTransform;
     //Vector2 Destination;
     private PlayerEnergyBar playerEnergy;
     private int health = 1;
@@ -30,7 +27,6 @@ public class DogScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movespeed*Time.deltaTime);
 
         if(health <= 0)
@@ -39,8 +35,6 @@ public class DogScript : MonoBehaviour
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
         }
-        
-           
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseScript : MonoBehaviour
-{
+public class PauseScript : MonoBehaviour{
 
+    [SerializeField] private GameObject panelpause;
+    [SerializeField] private GameObject uigamepanel;
 
-    [SerializeField]
-    private GameObject panelpause;
-    [SerializeField]
-    private GameObject uigamepanel;
     private bool isinpause = false;
 
     //private static Pausemanager instance;

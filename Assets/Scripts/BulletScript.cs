@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
 
-    [SerializeField]
-    float speed = 8f;
+    [SerializeField] float speed = 8f;
+
 	// Use this for initialization
 	void Start ()
     {

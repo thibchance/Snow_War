@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class RandomEntry : MonoBehaviour {
 
-    [SerializeField]
-    GameObject dog;
-    [SerializeField]
-    GameObject ennemies;
-    [SerializeField]
-    Transform spawnentry;
-    [SerializeField]
-    Transform spawn1;
+    [SerializeField] GameObject dog;
+
+    [SerializeField] GameObject ennemies;
+
+    [SerializeField] Transform spawnentry;
+
+    [SerializeField] Transform spawn1;
+
     float spawntime;
     float spawnPeriod = 3f;
-
-    
-
-
-   
 
     //private float mintime = 10;
     //private float maxtime = 40;
@@ -31,22 +26,16 @@ public class RandomEntry : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
         if (GameObject.Find("ennemi") == null)
         {
-
-
-
             spawntime += Time.deltaTime;
+
             if (spawntime >= spawnPeriod)
             {
                 SpawnEntryRandom();
                 Dog();
             }
-
         }
-
-     
     }
 
     private void Dog()

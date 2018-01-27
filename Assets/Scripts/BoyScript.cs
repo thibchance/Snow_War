@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoyScript : MonoBehaviour
-{
+public class BoyScript : MonoBehaviour{
 
     public enum EnemyState
     {
@@ -12,20 +11,22 @@ public class BoyScript : MonoBehaviour
     }
 
     [SerializeField] private GameObject snowballSpawn;
+
     [SerializeField] private GameObject boyAttackZone;
+
     [SerializeField] private float moveSpeed;
-  //  [SerializeField] private GameObject target;
+
+  //[SerializeField] private GameObject target;
+
     private float distance;
-
     private bool isAttacking = false;
-
     private EnemyState enemyState = EnemyState.WALK;
 
     [SerializeField] private SpawnScript spawnScript;
+
     [SerializeField] private GameManager gameManager;
+
     [SerializeField] private DropSystemScript dropSystem;
-
-
 
     private PlayerEnergyBar playerEnergy;
     private Transform playerTransform;
@@ -47,7 +48,6 @@ public class BoyScript : MonoBehaviour
     }
     public void move()
     {
-       
         distance = Vector2.Distance(transform.position, playerTransform.transform.position);
         //Debug.Log("Distance" + distance);
 
@@ -79,17 +79,13 @@ public class BoyScript : MonoBehaviour
                 spawnScript.Attack();
                 break;
         }
-
-        
-       
+    
         if (health <= 0)
         {
             
             Destroy(gameObject);
             playerEnergy.WinEnergy();
-
             gameManager.score = gameManager.score + deadpoints;
-         
             dropSystem.calculateLoot();  
         }
 
@@ -100,11 +96,7 @@ public class BoyScript : MonoBehaviour
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
-            Destroy(collision.gameObject);
-            
+            Destroy(collision.gameObject);    
         }
-
-        
     }
-
 }

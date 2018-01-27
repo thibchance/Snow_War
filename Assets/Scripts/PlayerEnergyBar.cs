@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class PlayerEnergyBar : MonoBehaviour {
 
 
-    [SerializeField]
-    float Energy;
-    [SerializeField]
-    float energymax = 2;
-    [SerializeField]
+    [SerializeField] float Energy;
 
-    GameObject EnergyBar;
-    [SerializeField]
-    float EnergiLimit= 100;
-    [SerializeField]
-    Image imagebar;
+    [SerializeField] float energymax = 2;
+
+    [SerializeField] GameObject EnergyBar;
+
+    [SerializeField] float EnergiLimit= 100;
+
+    [SerializeField] Image imagebar;
     
 	// Use this for initialization
 	void Start ()
@@ -29,18 +27,17 @@ public class PlayerEnergyBar : MonoBehaviour {
     {
         float calculateenergy = Energy + energymax;
        
-        //if (Energy < EnergiLimit)
-        //{
-        //    imagebar.fillAmount = Energy + energymax;
+        /*if (Energy < EnergiLimit)
+        {
+            imagebar.fillAmount = Energy + energymax;
 
             SetEnergyBar(calculateenergy);
-        //}
-        //if ( Energy == EnergiLimit)
-        //{
-        //    //active l'attaque speciale
-        //    Energy = 0;
-        //}
-
+        }
+        if ( Energy == EnergiLimit)
+        {
+            //active l'attaque speciale
+            Energy = 0;
+        }*/
     }
 
     public void SetEnergyBar(float myEnergy)
