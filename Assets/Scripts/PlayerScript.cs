@@ -8,46 +8,47 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField]
     GameObject bullet;
+
     [SerializeField]
     GameObject BulletPosition;
+
     [SerializeField]
     float speed;
+
     [SerializeField]
     Transform Bulletspawn;
+
     [SerializeField]
     float snowballSpeed;
+
     [SerializeField]
     float timeToThrow = 2;
+
     [SerializeField]
     float lastTimeThrow;
+
     private Rigidbody2D body;
     private float timeLeft = 20f;
-
     private int ScoreCoins = 100;
     private GameManager gameManager;
     private PlayerHealth playerHealth;
-    
-
     private bool startTimer = false;
+
     // Use this for initialization
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
-        gameManager = FindObjectOfType<GameManager>();
-        
+        gameManager = FindObjectOfType<GameManager>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         
-
-
         Vector2 movement = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
         if(startTimer)
@@ -67,7 +68,6 @@ public class PlayerScript : MonoBehaviour
     public void Attack()
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
-
 
         {
             GameObject Snowball = Instantiate(bullet, Bulletspawn.position, Bulletspawn.rotation);
@@ -94,13 +94,11 @@ public class PlayerScript : MonoBehaviour
             playerHealth.LoseLife();
             
             Destroy(collision.gameObject);
-
         }
 
         if (collision.gameObject.tag == "Dog")
         {
             playerHealth.LoseLife();
-            
         }
 
         if (collision.gameObject.tag == "ScoreCoin")
