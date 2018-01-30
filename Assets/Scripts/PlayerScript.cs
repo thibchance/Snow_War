@@ -70,6 +70,14 @@ public class PlayerScript : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "BigSnowBall")
+        {
+           // bullet.GetComponent<Collider2D>().enabled = false;
+           // voir avec nico pour changer la bullet 
+            startTimer = true ;
+            Destroy(collision.gameObject);
+        }
+        
         if (collision.gameObject.tag == "DoubleSnowball")
         {
             timeToThrow /= 2;
@@ -77,7 +85,7 @@ public class PlayerScript : MonoBehaviour{
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "SnowballEnemy")
+        if (collision.gameObject.tag == "SnowballEnemy") 
         {
             playerHealth.LoseLife();
             Destroy(collision.gameObject);

@@ -13,6 +13,7 @@ TagManager:
   - DoubleSnowball
   - SnowballEnemy
   - Dog
+  - BigSnowBall
   layers:
   - Default
   - TransparentFX

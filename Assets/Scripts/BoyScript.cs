@@ -97,7 +97,13 @@ public class BoyScript : MonoBehaviour{
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
-            Destroy(collision.gameObject);    
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BigSnowballPlayer")
+        {
+            health = health - 2;
+            Destroy(collision.gameObject);
         }
     }
 }

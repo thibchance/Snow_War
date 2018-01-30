@@ -44,5 +44,11 @@ public class DogScript : MonoBehaviour{
             health = health - 1;
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "BigSnowballPlayer")
+        {
+            health = health - 2;
+            Destroy(collision.gameObject);
+        }
     }
 }
