@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour{
+    enum SnowBallType
+    {
+        
+        DOUBLESNOWBALL,
+        BIGSNOWBALL,
+        SNOWWAVE,
+        LENGTH
+
+    }
+    private SnowBallType snowbaltype;
 
     [SerializeField] GameObject bullet;
 
@@ -25,6 +35,7 @@ public class PlayerScript : MonoBehaviour{
     private PlayerHealth playerHealth;
     private bool startTimer = false;
 
+    
     [SerializeField]
     private float timeGliss;
     [SerializeField]
@@ -111,17 +122,32 @@ public class PlayerScript : MonoBehaviour{
            
            // bullet.GetComponent<Collider2D>().enabled = false;
            // voir avec nico pour changer la bullet 
-            startTimer = true ;
+           // startTimer = true ;
             Destroy(collision.gameObject);
+            
         }
         
-        if (collision.gameObject.tag == "DoubleSnowball")
+        if (collision.gameObject.tag == "Bonus")
         {
-            timeToThrow /= 2;
-            startTimer = true;
+            
+            //timeToThrow /= 2;
+            //startTimer = true;
             Destroy(collision.gameObject);
+            switch((int)Random.Range(0, (float)SnowBallType.LENGTH))
+            {
+                case 0:
+                    //DOUBLESNOWBALL
+                    break;
+                case 1:
+                    //BIGSNOWBALL
+                    break;
+                case 2:
+                    //SNOWWAVE
+                    break;
+            }
+                ;
         }
-
+        
         if (collision.gameObject.tag == "SnowballEnemy") 
         {
             playerHealth.LoseLife();
