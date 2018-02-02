@@ -25,10 +25,16 @@ public class PlayerScript : MonoBehaviour{
     private PlayerHealth playerHealth;
     private bool startTimer = false;
 
+    [SerializeField]
+    private float timeGliss;
+    [SerializeField]
+    private float timeGlissmax = 3;
+    Collider2D player;
     // Use this for initialization
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        player = GetComponent<Collider2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
         gameManager = FindObjectOfType<GameManager>(); 
     }
@@ -41,11 +47,17 @@ public class PlayerScript : MonoBehaviour{
         float moveVertical = Input.GetAxis("Vertical");
         
         Vector2 movement = new Vector2(moveHorizontal * speed, moveVertical * speed);
+        body.velocity = movement;
+        //bool isgliss = false;
 
+
+        Gliss();
+      
         if(startTimer)
         {
             timeLeft -= Time.deltaTime;
-            Debug.Log("Chrono" + timeLeft);
+
+
 
             if (timeLeft < 0)
             {
@@ -55,7 +67,7 @@ public class PlayerScript : MonoBehaviour{
             }
         }
 
-        body.velocity = movement;
+        
     }
     public void Attack()
     {
@@ -67,11 +79,36 @@ public class PlayerScript : MonoBehaviour{
             lastTimeThrow = Time.realtimeSinceStartup;
         }
     }
+    private void Gliss()
 
+    {
+        if (timeGliss < timeGlissmax)
+        {     
+            if (Input.GetKey(KeyCode.Q))
+            {
+                //animation de gliss
+                player.isTrigger = true; 
+            }
+
+            if (player.isTrigger == true)
+            {
+                timeGliss++;
+            }
+        }
+        if (timeGliss == timeGlissmax)
+        {
+            player.isTrigger = false;
+            timeGliss = 0;
+        }
+        
+        
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "BigSnowBall")
         {
+           
            // bullet.GetComponent<Collider2D>().enabled = false;
            // voir avec nico pour changer la bullet 
             startTimer = true ;
