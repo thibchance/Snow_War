@@ -82,7 +82,6 @@ public class BoyScript : MonoBehaviour{
     
         if (health <= 0)
         {
-            
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
