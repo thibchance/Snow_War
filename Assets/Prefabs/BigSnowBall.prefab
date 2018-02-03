@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58105565388151346}
   m_Layer: 0
   m_Name: BigSnowBall
-  m_TagString: SnowballPlayer
+  m_TagString: BigSnowBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

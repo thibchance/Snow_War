@@ -9,12 +9,15 @@ public class PlayerScript : MonoBehaviour{
         DOUBLESNOWBALL,
         BIGSNOWBALL,
         SNOWWAVE,
+        SNOWWHIRL,
         LENGTH
 
     }
     private SnowBallType snowbaltype;
 
-    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject[] snowballs;
+
+    int snowballs_use = 0;
 
     [SerializeField] GameObject BulletPosition;
 
@@ -68,8 +71,6 @@ public class PlayerScript : MonoBehaviour{
         {
             timeLeft -= Time.deltaTime;
 
-
-
             if (timeLeft < 0)
             {
                 timeToThrow = 2;
@@ -84,7 +85,7 @@ public class PlayerScript : MonoBehaviour{
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
         {
-            GameObject Snowball = Instantiate(bullet, Bulletspawn.position, Bulletspawn.rotation);
+            GameObject Snowball = Instantiate(snowballs[snowballs_use], Bulletspawn.position, Bulletspawn.rotation);
             Snowball.GetComponent<Rigidbody2D>().velocity = Bulletspawn.right * snowballSpeed;
             Destroy(Snowball, 5);
             lastTimeThrow = Time.realtimeSinceStartup;
@@ -117,35 +118,30 @@ public class PlayerScript : MonoBehaviour{
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "BigSnowBall")
-        {
-           
-           // bullet.GetComponent<Collider2D>().enabled = false;
-           // voir avec nico pour changer la bullet 
-           // startTimer = true ;
-            Destroy(collision.gameObject);
-            
-        }
-        
+      
         if (collision.gameObject.tag == "Bonus")
         {
-            
-            //timeToThrow /= 2;
-            //startTimer = true;
+            //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch((int)Random.Range(0, (float)SnowBallType.LENGTH))
+            switch(1)
             {
+                
                 case 0:
-                    //DOUBLESNOWBALL
+                    timeToThrow /= 4;
+                    startTimer = true;
                     break;
                 case 1:
-                    //BIGSNOWBALL
+                    //BIGSNOWBALL   
+                    snowballs_use = 1;
+                    startTimer = true;
                     break;
                 case 2:
                     //SNOWWAVE
-                    break;
+                    break; 
+                
+
             }
-                ;
+                
         }
         
         if (collision.gameObject.tag == "SnowballEnemy") 
