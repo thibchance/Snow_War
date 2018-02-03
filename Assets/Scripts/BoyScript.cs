@@ -19,6 +19,7 @@ public class BoyScript : MonoBehaviour{
   //[SerializeField] private GameObject target;
 
     private float distance;
+    [SerializeField] private float throwDistance;
     private bool isAttacking = false;
     private EnemyState enemyState = EnemyState.WALK;
 
@@ -30,7 +31,7 @@ public class BoyScript : MonoBehaviour{
 
     private PlayerEnergyBar playerEnergy;
     private Transform playerTransform;
-    private int health = 2;
+    [SerializeField] private int health;
     private int deadpoints = 100;
 
     // Use this for initialization
@@ -51,7 +52,7 @@ public class BoyScript : MonoBehaviour{
         distance = Vector2.Distance(transform.position, playerTransform.transform.position);
         //Debug.Log("Distance" + distance);
 
-        if (distance <= 10.00)
+        if (distance <= throwDistance)
         {
             isAttacking = true;
         }
@@ -95,7 +96,13 @@ public class BoyScript : MonoBehaviour{
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
-            Destroy(collision.gameObject);    
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BigSnowballPlayer")
+        {
+            health = health - 2;
+            Destroy(collision.gameObject);
         }
     }
 }

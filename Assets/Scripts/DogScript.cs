@@ -32,8 +32,9 @@ public class DogScript : MonoBehaviour{
         if(health <= 0)
         {
             Destroy(gameObject);
-            playerEnergy.WinEnergy();
+            //playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
+            
         }
 	}
 
@@ -42,6 +43,12 @@ public class DogScript : MonoBehaviour{
         if (collision.gameObject.tag == "SnowballPlayer")
         {
             health = health - 1;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BigSnowballPlayer")
+        {
+            health = health - 2;
             Destroy(collision.gameObject);
         }
     }
