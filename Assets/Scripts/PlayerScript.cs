@@ -39,10 +39,9 @@ public class PlayerScript : MonoBehaviour{
     private bool startTimer = false;
 
     
-    [SerializeField]
-    private float timeGliss;
-    [SerializeField]
-    private float timeGlissmax = 3;
+    [SerializeField] private float timeGliss;
+    [SerializeField] private float timeGlissmax = 3;
+
     Collider2D player;
     // Use this for initialization
     void Start()
@@ -123,20 +122,21 @@ public class PlayerScript : MonoBehaviour{
         {
             //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch(1)
+            switch(2)
             {
                 
                 case 0:
                     timeToThrow /= 4;
                     startTimer = true;
                     break;
-                case 1:
-                    //BIGSNOWBALL   
+                case 1: 
                     snowballs_use = 1;
                     startTimer = true;
                     break;
                 case 2:
                     //SNOWWAVE
+                    snowballs_use = 2;
+                    startTimer = true;
                     break; 
                 
 

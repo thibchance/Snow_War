@@ -250,7 +250,7 @@ Prefab:
     - target: {fileID: 114054902986103224, guid: 7a30c7f15da9b50439e5a13d11eadebc,
         type: 2}
       propertyPath: snowballs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -299,6 +299,12 @@ Prefab:
       propertyPath: snowballs.Array.data[1]
       value: 
       objectReference: {fileID: 1002973158174004, guid: 6cc181ed687118741aa41b2100fba6aa,
+        type: 2}
+    - target: {fileID: 114054902986103224, guid: 7a30c7f15da9b50439e5a13d11eadebc,
+        type: 2}
+      propertyPath: snowballs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1956610903989934, guid: b8eb1bd086f156f408c5d2dd1d9bb946,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
