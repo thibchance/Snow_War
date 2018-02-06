@@ -95,7 +95,7 @@ public class PlayerScript : MonoBehaviour{
     {
         if (timeGliss < timeGlissmax)
         {     
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.Space))
             {
                 //animation de gliss
                 player.isTrigger = true; 
