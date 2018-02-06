@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61318002038389586}
   m_Layer: 0
   m_Name: Bonus
-  m_TagString: DoubleSnowball
+  m_TagString: Bonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

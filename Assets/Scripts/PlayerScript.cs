@@ -116,6 +116,7 @@ public class PlayerScript : MonoBehaviour{
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
+
     {
         if(collision.gameObject.tag == "BigSnowBall")
         {

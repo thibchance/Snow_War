@@ -1394,6 +1394,10 @@ Prefab:
       propertyPath: m_Name
       value: Bonus
       objectReference: {fileID: 0}
+    - target: {fileID: 1136911103832538, guid: b968a137d1634684b8d7537b881a29ef, type: 2}
+      propertyPath: m_TagString
+      value: Bonus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b968a137d1634684b8d7537b881a29ef, type: 2}
   m_IsPrefabParent: 0
