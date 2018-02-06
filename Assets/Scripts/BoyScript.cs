@@ -83,7 +83,6 @@ public class BoyScript : MonoBehaviour{
     
         if (health <= 0)
         {
-            
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
@@ -100,10 +99,9 @@ public class BoyScript : MonoBehaviour{
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "BigSnowballPlayer")
+        if (collision.gameObject.tag == "BigSnowBall")
         {
             health = health - 2;
-            Destroy(collision.gameObject);
         }
     }
 }
