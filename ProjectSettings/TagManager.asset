@@ -14,7 +14,7 @@ TagManager:
   - SnowballEnemy
   - Dog
   - BigSnowBall
-  - Vague
+  - Wave
   layers:
   - Default
   - TransparentFX

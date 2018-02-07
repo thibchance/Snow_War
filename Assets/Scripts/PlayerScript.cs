@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour{
     [SerializeField] float lastTimeThrow;
 
     private Rigidbody2D body;
-    private float timeLeft = 20f;
+    private float timeLeft = 10f;
     private int ScoreCoins = 100;
     private GameManager gameManager;
     private PlayerHealth playerHealth;
@@ -40,6 +40,7 @@ public class PlayerScript : MonoBehaviour{
 
     
     [SerializeField] private float timeGliss;
+
     [SerializeField] private float timeGlissmax = 3;
 
     Collider2D player;
@@ -68,16 +69,21 @@ public class PlayerScript : MonoBehaviour{
       
         if(startTimer)
         {
+            Debug.Log("ca marche");
             timeLeft -= Time.deltaTime;
 
             if (timeLeft < 0)
             {
-                timeToThrow = 2;
+                
                 startTimer = false;
                 timeLeft = 20f;
+ 
             }
         }
-
+        else
+        {
+            Attack();
+        }
         
     }
     public void Attack()
@@ -123,7 +129,7 @@ public class PlayerScript : MonoBehaviour{
         {
             //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch(2)
+            switch(1)
             {
                 
                 case 0:
@@ -136,7 +142,11 @@ public class PlayerScript : MonoBehaviour{
                     break;
                 case 2:
                     //SNOWWAVE
+                    GameObject Wave = snowballs[2];
+                    Wave.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
+                    snowballSpeed = 0.0f;
                     snowballs_use = 2;
+                    Destroy(Wave,1);
                     startTimer = true;
                     break; 
                 

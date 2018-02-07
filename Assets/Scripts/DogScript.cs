@@ -50,6 +50,10 @@ public class DogScript : MonoBehaviour{
         {
             health = health - 2;
         }
-    
+
+        if (collision.gameObject.tag == "Wave")
+        {
+            health = health - 2;
+        }
     }
 }
