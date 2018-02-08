@@ -69,12 +69,12 @@ public class PlayerScript : MonoBehaviour{
       
         if(startTimer)
         {
-            Debug.Log("ca marche");
+            Debug.Log("ca sort");
             timeLeft -= Time.deltaTime;
 
             if (timeLeft < 0)
             {
-                
+                Debug.Log("ca marche");
                 startTimer = false;
                 timeLeft = 20f;
  
@@ -82,7 +82,10 @@ public class PlayerScript : MonoBehaviour{
         }
         else
         {
-            Attack();
+            Debug.Log("ca reste ici");
+            GameObject NormalSnowBall = snowballs[0];
+            NormalSnowBall.GetComponent<Rigidbody2D>().velocity = new Vector2(-4.0f, -2.0f);
+            snowballs_use = 0;
         }
         
     }
@@ -146,7 +149,7 @@ public class PlayerScript : MonoBehaviour{
                     Wave.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
                     snowballSpeed = 0.0f;
                     snowballs_use = 2;
-                    Destroy(Wave,1);
+                    Destroy(Wave, 1);
                     startTimer = true;
                     break; 
                 
