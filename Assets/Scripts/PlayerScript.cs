@@ -77,7 +77,6 @@ public class PlayerScript : MonoBehaviour{
                 Debug.Log("ca marche");
                 startTimer = false;
                 timeLeft = 20f;
- 
             }
         }
         else
@@ -87,6 +86,7 @@ public class PlayerScript : MonoBehaviour{
             NormalSnowBall.GetComponent<Rigidbody2D>().velocity = new Vector2(-4.0f, -2.0f);
             snowballs_use = 0;
             snowballSpeed = 6.0f;
+            timeToThrow = 2;
         }
         
     }
@@ -133,7 +133,7 @@ public class PlayerScript : MonoBehaviour{
         {
             //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch(2)
+            switch(0)
             {
                 
                 case 0:
