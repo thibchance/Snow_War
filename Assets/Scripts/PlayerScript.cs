@@ -86,6 +86,7 @@ public class PlayerScript : MonoBehaviour{
             GameObject NormalSnowBall = snowballs[0];
             NormalSnowBall.GetComponent<Rigidbody2D>().velocity = new Vector2(-4.0f, -2.0f);
             snowballs_use = 0;
+            snowballSpeed = 6.0f;
         }
         
     }
@@ -132,7 +133,7 @@ public class PlayerScript : MonoBehaviour{
         {
             //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch(1)
+            switch(2)
             {
                 
                 case 0:
