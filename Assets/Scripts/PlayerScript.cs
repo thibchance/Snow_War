@@ -134,7 +134,7 @@ public class PlayerScript : MonoBehaviour{
         {
             //(int)Random.Range(0, (float)SnowBallType.LENGTH)
             Destroy(collision.gameObject);
-            switch(0)
+            switch(2)
             {
                 
                 case 0:

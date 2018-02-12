@@ -13,11 +13,16 @@ public class CatScript : MonoBehaviour {
     [SerializeField] Transform spawnflee;
     [SerializeField] float movespeed = 1f;
     [SerializeField] float speedflee = 1f;
-   
-	// Use this for initialization
-	void Start ()
+    private int health = 1;
+    private int deadpoints = 50;
+    private PlayerEnergyBar playerEnergy;
+    [SerializeField] GameManager gameManager;
+    // Use this for initialization
+    void Start ()
     {
-        
+        Player = FindObjectOfType<PlayerScript>().transform;
+        playerEnergy = FindObjectOfType<PlayerEnergyBar>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 	
 	// Update is called once per frame
@@ -33,7 +38,13 @@ public class CatScript : MonoBehaviour {
 
         }
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            playerEnergy.WinEnergy();
+            gameManager.score = gameManager.score + deadpoints;
 
+        }
 
     }
 
@@ -42,6 +53,25 @@ public class CatScript : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             touchPlayer = true;
+        }
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SnowballPlayer")
+        {
+            health = health - 1;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BigSnowBall")
+        {
+            health = health - 2;
+        }
+
+        if (collision.gameObject.tag == "Wave")
+        {
+            health = health - 2;
         }
     }
 }

@@ -244,17 +244,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowballs:
-  - {fileID: 1046678342306866, guid: e7637082696665a45a7ee30e70f2785f, type: 2}
+  - {fileID: 1807192611903954, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}
   - {fileID: 1710574830351992, guid: 9496d032c2f24ff4c9b0411fbef36ba9, type: 2}
   - {fileID: 1002973158174004, guid: 6cc181ed687118741aa41b2100fba6aa, type: 2}
   BulletPosition: {fileID: 1902762548892834}
   speed: 3
   Bulletspawn: {fileID: 4706173097072626}
   snowballSpeed: 5
-  timeToThrow: 2
+  timeToThrow: 1
   lastTimeThrow: 0
-  timeGliss: 0
-  timeGlissmax: 3
+  timeSlide: 0
+  timeSlidemax: 3
 --- !u!114 &114799394699715118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,7 +316,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808676329919322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804210682213990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.972429, y: -1.0025798, z: 0.012034821}
+  m_LocalPosition: {x: -5.92, y: 1.57, z: 0.012034821}
   m_LocalScale: {x: 0.5407891, y: 0.3529303, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
+  spawnflee: {fileID: 4776841536386982, guid: e01fb6b7506191e4a989b38604edefd4, type: 2}
   movespeed: 2
+  speedflee: 4
 --- !u!212 &212715536792984560
 SpriteRenderer:
   m_ObjectHideFlags: 1
