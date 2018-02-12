@@ -39,9 +39,9 @@ public class PlayerScript : MonoBehaviour{
     private bool startTimer = false;
 
     
-    [SerializeField] private float timeGliss;
+    [SerializeField] private float timeSlide;
 
-    [SerializeField] private float timeGlissmax = 3;
+    [SerializeField] private float timeSlidemax = 3;
 
     Collider2D player;
     // Use this for initialization
@@ -56,6 +56,7 @@ public class PlayerScript : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+        
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -65,7 +66,7 @@ public class PlayerScript : MonoBehaviour{
         //bool isgliss = false;
 
 
-        Gliss();
+        Slide();
       
         if(startTimer)
         {
@@ -100,10 +101,10 @@ public class PlayerScript : MonoBehaviour{
             lastTimeThrow = Time.realtimeSinceStartup;
         }
     }
-    private void Gliss()
+    private void Slide()
 
     {
-        if (timeGliss < timeGlissmax)
+        if (timeSlide < timeSlidemax)
         {     
             if (Input.GetKey(KeyCode.Space))
             {
@@ -113,13 +114,13 @@ public class PlayerScript : MonoBehaviour{
 
             if (player.isTrigger == true)
             {
-                timeGliss++;
+                timeSlide++;
             }
         }
-        if (timeGliss == timeGlissmax)
+        if (timeSlide== timeSlidemax)
         {
             player.isTrigger = false;
-            timeGliss = 0;
+            timeSlide = 0;
         }
         
         
@@ -161,7 +162,7 @@ public class PlayerScript : MonoBehaviour{
         
         if (collision.gameObject.tag == "SnowballEnemy") 
         {
-            playerHealth.LoseLife();
+            // playerHealth.LoseLife();
             Destroy(collision.gameObject);
         }
 

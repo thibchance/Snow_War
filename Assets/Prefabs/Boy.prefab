@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e64a4f0fffa29240bb5673ed2667804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc,
+    type: 2}
   snowballSpawn: {fileID: 4480569564521416}
   snowballPrefab: {fileID: 1046678342306866, guid: e7637082696665a45a7ee30e70f2785f,
     type: 2}

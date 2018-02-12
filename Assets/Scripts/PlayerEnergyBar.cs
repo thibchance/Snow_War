@@ -8,16 +8,19 @@ public class PlayerEnergyBar : MonoBehaviour {
 
     [SerializeField] float Energy;
 
-    [SerializeField] float energymax = 2;
+    [SerializeField] float energymax = 1;
 
     [SerializeField] GameObject EnergyBar;
 
-    [SerializeField] float EnergiLimit= 100;
+    [SerializeField] float EnergiLimit= 10;
 
     [SerializeField] Image imagebar;
-    
-	// Use this for initialization
-	void Start ()
+
+    [SerializeField] Transform Player;
+    [SerializeField] float TimeTourbillon;
+    [SerializeField] float TimeTourbillonlimit = 10;
+    // Use this for initialization
+    void Start ()
     {
        //GetComponent<SpriteRenderer>().color = Color.clear;
 	}
@@ -25,6 +28,7 @@ public class PlayerEnergyBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Tourbillon();
         float calculateenergy = Energy + energymax;
        
         /*if (Energy < EnergiLimit)
@@ -53,5 +57,19 @@ public class PlayerEnergyBar : MonoBehaviour {
         Energy++;
         imagebar.fillAmount = Energy/EnergiLimit;
         Debug.Log(Energy);
+    }
+
+    public void Tourbillon ()
+    {
+        if (Energy==EnergiLimit)
+        {
+            TimeTourbillon++;
+            Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
+        }
+        if (TimeTourbillon==TimeTourbillonlimit)
+        {
+            Energy = 0;
+
+        }
     }
 }
