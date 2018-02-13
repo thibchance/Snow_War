@@ -15,30 +15,47 @@ public class BossScript : MonoBehaviour
     private Rigidbody2D body;
     private float bodyVelocity;
     private int health = 30;
-    private float moveSpeed = 3;
-    [SerializeField] private Transform bossTransform;
+    private float moveSpeed = 1;
+    private float minimumValue = 0.1f;
+    private Transform nextPosition;
+    private Transform[] wayPoints;
     [SerializeField] private Transform[] firstModeWayPoints;
     [SerializeField] private Transform[] secondModeWayPoints;
     private int test;
     private BossState bossState = BossState.FIRSTMODE;
+    private Transform spawn;
+
+    private Transform target;
+
+    [SerializeField] private Transform[] snowballSpawn;
+
+    [SerializeField] private GameObject snowballPrefab;
+
+    [SerializeField] private float snowballSpeed;
+
+    [SerializeField] private float timeToThrow = 2;
+
+    [SerializeField] private float lastTimeThrow;
 
     // Use this for initialization
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        
+        target = FindObjectOfType<PlayerScript>().transform;
+        wayPoints = firstModeWayPoints;
+        nextPosition = wayPoints[Random.Range(0, wayPoints.Length)];
     }
 
     // Update is called once per frame
     void Update()
     {
         bossFight();
-        bodyVelocity = body.velocity.y;
-        Debug.Log("VELOCITY" + bodyVelocity);
-        transform.position = Vector2.MoveTowards(transform.position, firstModeWayPoints[0].transform.position, moveSpeed * Time.deltaTime);
-        if (transform.position == firstModeWayPoints[test].transform.position)
+        if (health <= 20)
         {
-            bossFight();
+            bossState = BossState.SECONDMODE;
+        }
+        if (health <= 10)
+        {
+            bossState = BossState.THIRDMODE;
         }
     }
 
@@ -47,21 +64,65 @@ public class BossScript : MonoBehaviour
         switch (bossState)
         {
             case BossState.FIRSTMODE:
-                
-                if (transform.position == firstModeWayPoints[test].transform.position)
-                {
-                    Debug.Log("GRRRRRRRRRRRR");
-                    test = Random.Range(0, 1);
-                    Debug.Log("TEST " + test);
-                    transform.position = Vector2.MoveTowards(transform.position, firstModeWayPoints[test].transform.position, moveSpeed * Time.deltaTime);
-                }
+                Move();
+                Attack();
                 break;
             case BossState.SECONDMODE:
-
+                wayPoints = secondModeWayPoints;
+                Move();
+                Attack();
                 break;
             case BossState.THIRDMODE:
-
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                Attack();
                 break;
+        }
+    }
+
+    private void Move()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, nextPosition.position, moveSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, nextPosition.position) <= minimumValue)
+        {
+            ChangeDestination();
+        }
+    }
+
+    private void ChangeDestination()
+    {
+        nextPosition = wayPoints[Random.Range(0, wayPoints.Length)];
+    }
+
+    public void Attack()
+    {
+        if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
+        {
+            for (int i = 0; i < snowballSpawn.Length; i++)
+            {
+                GameObject Snowball = Instantiate(snowballPrefab, snowballSpawn[i].position, snowballSpawn[i].rotation);
+                Snowball.GetComponent<Rigidbody2D>().velocity = snowballSpawn[i].up * snowballSpeed;
+                Destroy(Snowball, 5);
+                lastTimeThrow = Time.realtimeSinceStartup;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SnowballPlayer")
+        {
+            health = health - 1;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BigSnowBall")
+        {
+            health = health - 2;
+        }
+
+        if (collision.gameObject.tag == "Wave")
+        {
+            health = health - 2;
         }
     }
 }
