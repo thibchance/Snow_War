@@ -6964,13 +6964,11 @@ Prefab:
       propertyPath: textscore
       value: 
       objectReference: {fileID: 1408631715}
-    - target: {fileID: 114785282951687200, guid: 1851e90271fdd574f834e68dd1663248,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: spawnentry
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114785282951687200, guid: 1851e90271fdd574f834e68dd1663248,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: spawn1
       value: 
       objectReference: {fileID: 0}
@@ -6982,7 +6980,7 @@ Prefab:
         type: 2}
     m_RemovedComponents:
     - {fileID: 114177454156104284, guid: 1851e90271fdd574f834e68dd1663248, type: 2}
-    - {fileID: 114785282951687200, guid: 1851e90271fdd574f834e68dd1663248, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 1851e90271fdd574f834e68dd1663248, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1772356808
