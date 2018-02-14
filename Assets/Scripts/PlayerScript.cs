@@ -65,6 +65,10 @@ public class PlayerScript : MonoBehaviour{
         body.velocity = movement;
         //bool isgliss = false;
 
+        /*if all ennemie is dead 
+         * {  passer a la scene suivante}
+         * */
+         
 
         Slide();
       
@@ -110,6 +114,7 @@ public class PlayerScript : MonoBehaviour{
             {
                 //animation de gliss
                 player.isTrigger = true; 
+                
             }
 
             if (player.isTrigger == true)
@@ -126,15 +131,16 @@ public class PlayerScript : MonoBehaviour{
         
         
     }
+  
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
       
         if (collision.gameObject.tag == "Bonus")
         {
-            //(int)Random.Range(0, (float)SnowBallType.LENGTH)
+            
             Destroy(collision.gameObject);
-            switch(2)
+            switch((int)Random.Range(0, (float)SnowBallType.LENGTH))
             {
                 
                 case 0:
@@ -162,7 +168,7 @@ public class PlayerScript : MonoBehaviour{
         
         if (collision.gameObject.tag == "SnowballEnemy") 
         {
-            // playerHealth.LoseLife();
+             playerHealth.LoseLife();
             Destroy(collision.gameObject);
         }
 
@@ -170,7 +176,7 @@ public class PlayerScript : MonoBehaviour{
         {
             playerHealth.LoseLife();
         }
-
+       
         if (collision.gameObject.tag == "ScoreCoin")
         {
             gameManager.score = gameManager.score + ScoreCoins;

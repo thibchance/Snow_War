@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50328872849135302}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,8 @@ MonoBehaviour:
   spawnflee: {fileID: 4776841536386982, guid: e01fb6b7506191e4a989b38604edefd4, type: 2}
   movespeed: 2
   speedflee: 4
+  gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
+    type: 2}
 --- !u!212 &212715536792984560
 SpriteRenderer:
   m_ObjectHideFlags: 1

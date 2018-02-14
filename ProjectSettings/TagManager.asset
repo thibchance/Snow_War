@@ -15,6 +15,7 @@ TagManager:
   - Dog
   - BigSnowBall
   - Wave
+  - Limit
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnSystem : MonoBehaviour {
 
@@ -31,6 +32,9 @@ public class SpawnSystem : MonoBehaviour {
         {
             startSpawn = false;
         }
+
+      
+        
 	}
 
     IEnumerator RandomSpawn()
@@ -88,5 +92,7 @@ public class SpawnSystem : MonoBehaviour {
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(cat, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
+        
+        
     }
 }

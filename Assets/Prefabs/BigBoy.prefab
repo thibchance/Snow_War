@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114648969852878862}
   m_Layer: 0
   m_Name: BigBoy
-  m_TagString: Untagged
+  m_TagString: SnowballEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481842052278206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.06, y: -0.03, z: 0.04204808}
+  m_LocalPosition: {x: -4.64, y: -0.54, z: 0.012034821}
   m_LocalScale: {x: 0.30419376, y: 1.5120946, z: 1.3653259}
   m_Children:
   - {fileID: 4991099792564496}
@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e64a4f0fffa29240bb5673ed2667804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4104838010978778, guid: 7a30c7f15da9b50439e5a13d11eadebc,
+    type: 2}
   snowballSpawn: {fileID: 4991099792564496}
   snowballPrefab: {fileID: 1046678342306866, guid: e7637082696665a45a7ee30e70f2785f,
     type: 2}
@@ -165,7 +166,7 @@ MonoBehaviour:
   boyAttackZone: {fileID: 1000658896662626}
   moveSpeed: 1
   throwDistance: 4
-  spawnScript: {fileID: 0}
+  spawnScript: {fileID: 114195082101307726}
   gameManager: {fileID: 0}
   dropSystem: {fileID: 114360574303020982}
   health: 5
