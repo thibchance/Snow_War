@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         if (Ennemie < 0)
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 

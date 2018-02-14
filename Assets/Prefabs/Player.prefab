@@ -245,16 +245,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballs:
   - {fileID: 1807192611903954, guid: 5436cea6cbdde3e43b809784e8690de3, type: 2}
-  - {fileID: 1710574830351992, guid: 9496d032c2f24ff4c9b0411fbef36ba9, type: 2}
   - {fileID: 1002973158174004, guid: 6cc181ed687118741aa41b2100fba6aa, type: 2}
+  - {fileID: 1710574830351992, guid: 9496d032c2f24ff4c9b0411fbef36ba9, type: 2}
   BulletPosition: {fileID: 1902762548892834}
-  speed: 3
+  speed: 5
   Bulletspawn: {fileID: 4706173097072626}
-  snowballSpeed: 5
-  timeToThrow: 1
+  snowballSpeed: 10
+  timeToThrow: 0.1
   lastTimeThrow: 0
   timeSlide: 0
-  timeSlidemax: 3
+  timeSlidemax: 50
 --- !u!114 &114799394699715118
 MonoBehaviour:
   m_ObjectHideFlags: 1
