@@ -457,8 +457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.3, y: 0.0000038147}
-  m_SizeDelta: {x: 686.6, y: 372}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1148, y: 534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771905409
 MonoBehaviour:
@@ -486,7 +486,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -494,9 +494,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'The Clipping Babes
 
-    Game prog: Diogo Fernandes Carvalho, Thibault Chancerel, Kevin Ambuhl
-
-    Game art:David Placido '
+'
 --- !u!222 &1771905410
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -538,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.299988, y: -158.19}
+  m_AnchoredPosition: {x: 0, y: -155}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016834325
