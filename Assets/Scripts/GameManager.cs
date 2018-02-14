@@ -10,18 +10,19 @@ public class GameManager : MonoBehaviour
     public int score;
 
     [SerializeField]
-    Text textscore;
+    public Text textscore;
     private const string TEXT_SCORE = " ";
 
     int Ennemie = 100;
     int boy = 10;
     int bigBrother = 10;
     int bigBoy = 10;
-    int dog = 5;
+    int Animals = 8;
     // Use this for initialization
     void Start ()
     {
         textscore.text = TEXT_SCORE + score;
+        textscore.text = PlayerPrefs.GetInt("Score", 0).ToString();
     }
 	
 	// Update is called once per frame
@@ -42,6 +43,6 @@ public class GameManager : MonoBehaviour
     }
     public void Dieanimal()
     {
-        Ennemie = Ennemie - dog;
+        Ennemie = Ennemie - Animals;
     }
 }
