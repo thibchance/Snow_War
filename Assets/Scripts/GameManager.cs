@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log("score" + score);
         textscore.text = TEXT_SCORE + score;
 
-        if (Ennemie < 0)
+        if (Ennemie < 5)
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 

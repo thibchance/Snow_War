@@ -17,12 +17,14 @@ public class CatScript : MonoBehaviour {
     private int deadpoints = 50;
     private PlayerEnergyBar playerEnergy;
     [SerializeField] GameManager gameManager;
+    Collider2D cat;
     // Use this for initialization
     void Start ()
     {
         Player = FindObjectOfType<PlayerScript>().transform;
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
         gameManager = FindObjectOfType<GameManager>();
+        cat = GetComponent<Collider2D>();
     }
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class CatScript : MonoBehaviour {
         {
            
             transform.position = Vector2.MoveTowards(transform.position, spawnflee.transform.position, speedflee * Time.deltaTime);
-
+            cat.isTrigger = true;
         }
 
         if (health <= 0)

@@ -459,6 +459,11 @@ Prefab:
       propertyPath: secondModeWayPoints.Array.data[3]
       value: 
       objectReference: {fileID: 837649725}
+    - target: {fileID: 212070487006468254, guid: 4f34c8e1316d47442872475b6c1b923a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f34c8e1316d47442872475b6c1b923a, type: 2}
   m_IsPrefabParent: 0
