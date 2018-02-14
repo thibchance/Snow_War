@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     Text textscore;
     private const string TEXT_SCORE = " ";
 
+    int Ennemie = 100;
+    int boy = 10;
+    int bigBrother = 10;
+    int bigBoy = 10;
+    int dog = 5;
     // Use this for initialization
     void Start ()
     {
@@ -24,5 +29,19 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("score" + score);
         textscore.text = TEXT_SCORE + score;
+
+        if (Ennemie < 0)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+    }
+
+    public void Dieboy()
+    {
+        Ennemie = Ennemie - boy;
+    }
+    public void Dieanimal()
+    {
+        Ennemie = Ennemie - dog;
     }
 }

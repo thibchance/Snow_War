@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78b547160e36f6478fbd60f16661bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinBonus: {fileID: 0}
-  bonusAttack: {fileID: 0}
+  CoinBonus: {fileID: 1378234153158430, guid: c872e83487c715345a93e9f758834353, type: 2}
+  bonusAttack: {fileID: 1136911103832538, guid: b968a137d1634684b8d7537b881a29ef,
+    type: 2}
 --- !u!114 &114648969852878862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +168,8 @@ MonoBehaviour:
   moveSpeed: 1
   throwDistance: 4
   spawnScript: {fileID: 114195082101307726}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
+    type: 2}
   dropSystem: {fileID: 114360574303020982}
   health: 5
 --- !u!212 &212917736794389920

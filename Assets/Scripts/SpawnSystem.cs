@@ -16,7 +16,10 @@ public class SpawnSystem : MonoBehaviour {
     [SerializeField] GameObject bigBoy;
     [SerializeField] GameObject dog;
     [SerializeField] GameObject cat;
-
+    int ennemiBoy = 10;
+    int ennemibigBrother = 15;
+    int ennnemibigBoy = 20;
+    int ennemidog = 5;
 
     // Use this for initialization
     void Start ()
@@ -31,6 +34,7 @@ public class SpawnSystem : MonoBehaviour {
         if (Credits <= 0)
         {
             startSpawn = false;
+            
         }
 
       
@@ -53,42 +57,42 @@ public class SpawnSystem : MonoBehaviour {
         if(EnemySpawnchance <= 30)
         {
             Debug.Log("Boy I Choose you !");
-            Credits = Credits - 10;
+            Credits = Credits - ennemiBoy;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(boy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
         if (EnemySpawnchance > 30 && EnemySpawnchance <= 45)
         {
             Debug.Log("Big Brother I Choose you !");
-            Credits = Credits - 15;
+            Credits = Credits - ennemibigBrother;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigBro, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
         if (EnemySpawnchance > 45 && EnemySpawnchance <= 60)
         {
             Debug.Log("Big Sister I Choose you !");
-            Credits = Credits - 15;
+            Credits = Credits - ennemibigBrother;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigSis, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
         if (EnemySpawnchance > 60 && EnemySpawnchance <= 70)
         {
             Debug.Log("Big Boy I Choose you !");
-            Credits = Credits - 20;
+            Credits = Credits - ennnemibigBoy;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigBoy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
         if (EnemySpawnchance > 70 && EnemySpawnchance <= 95)
         {
             Debug.Log("Dog I Choose you !");
-            Credits = Credits - 5;
+            Credits = Credits - ennemidog;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(dog, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
         else
         {
             Debug.Log("Cat I Choose you !");
-            Credits = Credits - 5;
+            Credits = Credits - ennemidog;
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(cat, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }

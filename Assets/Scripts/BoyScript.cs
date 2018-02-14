@@ -86,7 +86,8 @@ public class BoyScript : MonoBehaviour{
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
-            dropSystem.calculateLoot();  
+            dropSystem.calculateLoot();
+            gameManager.Dieboy();
         }
 
     }

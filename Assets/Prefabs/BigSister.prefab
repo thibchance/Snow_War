@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741584269019568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.061435, y: 2.932495, z: 0.03001326}
+  m_LocalPosition: {x: -0.03, y: -0.06, z: 0.03001326}
   m_LocalScale: {x: 0.64515996, y: 0.72865, z: 1}
   m_Children: []
   m_Father: {fileID: 4354701211623934}
@@ -136,7 +136,7 @@ MonoBehaviour:
   snowballSpawn: {fileID: 1741584269019568}
   boyAttackZone: {fileID: 1741584269019568}
   moveSpeed: 2
-  throwDistance: 20
+  throwDistance: 4
   spawnScript: {fileID: 114686579822607510}
   gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
     type: 2}

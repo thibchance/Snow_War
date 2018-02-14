@@ -23,21 +23,22 @@ public class DogScript : MonoBehaviour{
         gameManager = FindObjectOfType<GameManager>();
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movespeed*Time.deltaTime);
 
-        if(health <= 0)
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movespeed * Time.deltaTime);
+
+        if (health <= 0)
         {
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
-            
-        }
-	}
+            gameManager.Dieanimal();
 
+
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SnowballPlayer")
