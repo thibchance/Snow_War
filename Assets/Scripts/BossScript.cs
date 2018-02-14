@@ -15,7 +15,7 @@ public class BossScript : MonoBehaviour
     private Rigidbody2D body;
     private float bodyVelocity;
     private int health = 30;
-    private float moveSpeed = 1;
+    private float moveSpeed = 5;
     private float minimumValue = 0.1f;
     private Transform nextPosition;
     private Transform[] wayPoints;
