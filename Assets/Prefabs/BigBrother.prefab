@@ -93,7 +93,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!60 &60473855351134404
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballSpawn: {fileID: 1423710833703006}
   boyAttackZone: {fileID: 1423710833703006}
-  moveSpeed: 5
+  moveSpeed: 2
   throwDistance: 4
   spawnScript: {fileID: 114422454936337360}
   gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,

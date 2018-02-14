@@ -28,7 +28,7 @@ public class PlayerEnergyBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //Tourbillon();
+        Tourbillon();
         float calculateenergy = Energy + energymax;
        
         /*if (Energy < EnergiLimit)
@@ -59,18 +59,18 @@ public class PlayerEnergyBar : MonoBehaviour {
         Debug.Log(Energy);
     }
 
-    //public void Tourbillon ()
-    //{
-    //    if (Energy==EnergiLimit)
-    //    {
-    //        TimeTourbillon++;
-    //        Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
-    //    }
-    //    if (TimeTourbillon==TimeTourbillonlimit)
-    //    {
-    //        imagebar.fillAmount = 0;
+    public void Tourbillon ()
+    {
+        if (Energy==EnergiLimit)
+        {
+            TimeTourbillon++;
+            //Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
+        }
+        if (TimeTourbillon==TimeTourbillonlimit)
+        {
+            imagebar.fillAmount = 0;
 
 
-    //    }
-    //}
+        }
+    }
 }

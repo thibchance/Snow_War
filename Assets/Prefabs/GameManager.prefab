@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665132971387694}
   - component: {fileID: 114190274446360324}
+  - component: {fileID: 114785282951687200}
   - component: {fileID: 114177454156104284}
   m_Layer: 0
   m_Name: GameManager
@@ -69,3 +70,18 @@ MonoBehaviour:
   score: 0
   textscore: {fileID: 114023000432840912, guid: 71453ea1c0ea74649af4e0fecb397794,
     type: 2}
+--- !u!114 &114785282951687200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023030442826088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2e9f15d3f83994bbea3f3e94f167ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dog: {fileID: 1412226553571538, guid: 23729fc6369fa7d43b0b3f670093a820, type: 2}
+  ennemies: {fileID: 1308345735839894, guid: e91ddc8558f493147958d9cd6f1509ea, type: 2}
+  spawnentry: {fileID: 4075286513108534, guid: 5765879b0e1ccd44a825ae16fe0341be, type: 2}
+  spawn1: {fileID: 4883784606403074, guid: 9404a6b0686111c4b9a5b8912aa8f0df, type: 2}

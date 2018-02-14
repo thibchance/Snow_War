@@ -43,11 +43,7 @@ public class CatScript : MonoBehaviour {
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
-            
-        }
-        if (transform.position == spawnflee.transform.position)
-        {
-            Destroy(gameObject);
+            gameManager.Dieanimal();
         }
 
     }
@@ -58,7 +54,7 @@ public class CatScript : MonoBehaviour {
         {
             touchPlayer = true;
         }
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
