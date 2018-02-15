@@ -113,23 +113,19 @@ public class PlayerScript : MonoBehaviour{
 
                 //animation de gliss
                 isincicible = true;
-                player.isTrigger = true;
+                
                 speed = speed+2;
 
-                
-                
+                timeSlide++;
+
             }
 
-            if (player.isTrigger == true)
-            {
-                timeSlide++;
-            }
         }
         if (timeSlide== timeSlidemax)
         {
-            player.isTrigger = false;
+            
             isincicible = false;
-            speed = 6;
+            speed = 5;
             timeSlide = 0;
 
         }

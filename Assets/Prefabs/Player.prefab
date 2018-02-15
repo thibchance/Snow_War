@@ -254,7 +254,7 @@ MonoBehaviour:
   timeToThrow: 0.5
   lastTimeThrow: 0
   timeSlide: 0
-  timeSlidemax: 50
+  timeSlidemax: 10
 --- !u!114 &114799394699715118
 MonoBehaviour:
   m_ObjectHideFlags: 1

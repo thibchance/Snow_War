@@ -66,6 +66,7 @@ public class PlayerEnergyBar : MonoBehaviour {
             TimeTourbillon++;
             Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
             Energy = 0;
+           
         }
         if (TimeTourbillon==TimeTourbillonlimit)
         {
