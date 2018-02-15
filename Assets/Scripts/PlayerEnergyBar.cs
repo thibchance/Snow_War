@@ -64,12 +64,14 @@ public class PlayerEnergyBar : MonoBehaviour {
         if (Energy==EnergiLimit)
         {
             TimeTourbillon++;
-            //Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
+            Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
+            Energy = 0;
         }
         if (TimeTourbillon==TimeTourbillonlimit)
         {
             imagebar.fillAmount = 0;
-
+           
+            TimeTourbillon = 0;
 
         }
     }

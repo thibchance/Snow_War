@@ -28,18 +28,20 @@ public class BoyScript : MonoBehaviour{
     [SerializeField] private GameManager gameManager;
 
     [SerializeField] private DropSystemScript dropSystem;
+    
 
     private PlayerEnergyBar playerEnergy;
     private Transform playerTransform;
     [SerializeField] private int health;
     private int deadpoints = 100;
-
+    
     // Use this for initialization
     void Start()
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
         gameManager = FindObjectOfType<GameManager>();
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
+        
     }
 
     // Update is called once per frame
@@ -80,7 +82,8 @@ public class BoyScript : MonoBehaviour{
                 spawnScript.Attack();
                 break;
         }
-    
+       
+            
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -91,7 +94,7 @@ public class BoyScript : MonoBehaviour{
         }
 
     }
-
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SnowballPlayer")

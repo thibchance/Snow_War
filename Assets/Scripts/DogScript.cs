@@ -15,6 +15,7 @@ public class DogScript : MonoBehaviour{
     private PlayerEnergyBar playerEnergy;
     private int health = 1;
     private int deadpoints = 50;
+  
     
     // Use this for initialization
     void Start ()
@@ -22,6 +23,7 @@ public class DogScript : MonoBehaviour{
         playerTransform = FindObjectOfType<PlayerScript>().transform;
         gameManager = FindObjectOfType<GameManager>();
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
+        
     }
 
     // Update is called once per frame
@@ -38,7 +40,10 @@ public class DogScript : MonoBehaviour{
 
 
         }
+       
     }
+        
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SnowballPlayer")

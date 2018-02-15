@@ -251,7 +251,7 @@ MonoBehaviour:
   speed: 5
   Bulletspawn: {fileID: 4706173097072626}
   snowballSpeed: 5
-  timeToThrow: 1
+  timeToThrow: 0.5
   lastTimeThrow: 0
   timeSlide: 0
   timeSlidemax: 50

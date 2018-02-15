@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpawnSystem : MonoBehaviour {
 
-    int Credits = 500;
+    int Credits = 200;
 
     bool startSpawn = true;
 

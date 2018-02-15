@@ -36,13 +36,14 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float timeToThrow = 2;
 
     [SerializeField] private float lastTimeThrow;
-
+    GameManager gamemanager;
     // Use this for initialization
     void Start()
     {
         target = FindObjectOfType<PlayerScript>().transform;
         wayPoints = firstModeWayPoints;
         nextPosition = wayPoints[Random.Range(0, wayPoints.Length)];
+        gamemanager = FindObjectOfType<GameManager>();
     }
     public int GetHEALTH()
     {
@@ -59,6 +60,11 @@ public class BossScript : MonoBehaviour
         if (health <= 10)
         {
             bossState = BossState.THIRDMODE;
+        }
+
+        if(health<=0)
+        {
+            gamemanager.FinalLevel();
         }
     }
 

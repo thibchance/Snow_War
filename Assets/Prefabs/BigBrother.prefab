@@ -136,7 +136,7 @@ MonoBehaviour:
   snowballSpawn: {fileID: 1423710833703006}
   boyAttackZone: {fileID: 1423710833703006}
   moveSpeed: 4
-  throwDistance: 4
+  throwDistance: 6
   spawnScript: {fileID: 114422454936337360}
   gameManager: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
     type: 2}

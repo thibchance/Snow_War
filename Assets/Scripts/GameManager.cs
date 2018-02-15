@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private const string TEXT_SCORE = " ";
 
     int Ennemie = 0;
-   
+    int level = 0;
     // Use this for initialization
     void Start ()
     {
@@ -28,17 +28,29 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("score" + score);
         textscore.text = TEXT_SCORE + score;
-        if(Ennemie == -1)
+        if(level < 4)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            NextLevel();
+            
         }
-        //if (Ennemie == -1 || GameObject.Find("Boss").GetComponent<BossScript>().GetHEALTH()==0)
-        //{
-           
-        //}
+       
+
+    }
+    private void NextLevel()
+    {
+        if (Ennemie == -1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            level++;
+        }
+    }
+    public void FinalLevel()
+    {
+       
+        
+            SceneManager.LoadScene("VictoryMenu");
         
     }
-
     public void Dieboy()
     {
         Ennemie--;

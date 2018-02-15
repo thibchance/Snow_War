@@ -65,9 +65,7 @@ public class PlayerScript : MonoBehaviour{
         body.velocity = movement;
         //bool isgliss = false;
 
-        /*if all ennemie is dead 
-         * {  passer a la scene suivante}
-         * */
+       
          
 
         Slide();
@@ -90,8 +88,8 @@ public class PlayerScript : MonoBehaviour{
             GameObject NormalSnowBall = snowballs[0];
             NormalSnowBall.GetComponent<Rigidbody2D>().velocity = new Vector2(-4.0f, -2.0f);
             snowballs_use = 0;
-            snowballSpeed = 6.0f;
-            timeToThrow = 2;
+            snowballSpeed = 8.0f;
+            timeToThrow = 1.0f;
         }
         
     }
@@ -131,7 +129,7 @@ public class PlayerScript : MonoBehaviour{
         {
             player.isTrigger = false;
             isincicible = false;
-
+            speed = 6;
             timeSlide = 0;
 
         }
