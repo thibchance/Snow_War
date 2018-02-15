@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour{
     private GameManager gameManager;
     private PlayerHealth playerHealth;
     private bool startTimer = false;
-
+    private bool isincicible = false;
     
     [SerializeField] private float timeSlide;
 
@@ -112,8 +112,13 @@ public class PlayerScript : MonoBehaviour{
         {     
             if (Input.GetKey(KeyCode.Space))
             {
+
                 //animation de gliss
-                player.isTrigger = true; 
+                isincicible = true;
+                player.isTrigger = true;
+                speed = speed+2;
+
+                
                 
             }
 
@@ -125,7 +130,10 @@ public class PlayerScript : MonoBehaviour{
         if (timeSlide== timeSlidemax)
         {
             player.isTrigger = false;
+            isincicible = false;
+
             timeSlide = 0;
+
         }
         
         
@@ -168,13 +176,22 @@ public class PlayerScript : MonoBehaviour{
         
         if (collision.gameObject.tag == "SnowballEnemy") 
         {
-             playerHealth.LoseLife();
+            if (!isincicible)
+            {
+                playerHealth.LoseLife();
+            }
+            
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Dog")
         {
-            playerHealth.LoseLife();
+            if (!isincicible)
+            {
+                playerHealth.LoseLife();
+            }
+            
+                
         }
        
         if (collision.gameObject.tag == "ScoreCoin")

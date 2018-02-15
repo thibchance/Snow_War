@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpawnSystem : MonoBehaviour {
 
-    int Credits = 100;
+    int Credits = 500;
 
     bool startSpawn = true;
 
@@ -20,11 +20,12 @@ public class SpawnSystem : MonoBehaviour {
     int ennemibigBrother = 15;
     int ennnemibigBoy = 20;
     int ennemidog = 5;
-
+    private GameManager gameManager;
     // Use this for initialization
     void Start ()
     {
         StartCoroutine("RandomSpawn");
+        gameManager = FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -58,6 +59,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Boy I Choose you !");
             Credits = Credits - ennemiBoy;
+            gameManager.Apparait();
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(boy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
@@ -65,6 +67,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Big Brother I Choose you !");
             Credits = Credits - ennemibigBrother;
+            gameManager.Apparait();
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigBro, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
@@ -72,6 +75,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Big Sister I Choose you !");
             Credits = Credits - ennemibigBrother;
+            gameManager.Apparait();
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigSis, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
@@ -79,6 +83,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Big Boy I Choose you !");
             Credits = Credits - ennnemibigBoy;
+            gameManager.Apparait();
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(bigBoy, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
@@ -86,6 +91,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Dog I Choose you !");
             Credits = Credits - ennemidog;
+            gameManager.Apparait();
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(dog, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }
@@ -93,6 +99,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             Debug.Log("Cat I Choose you !");
             Credits = Credits - ennemidog;
+            
             int spawnIndex = Random.Range(0, spawns.Length);
             Instantiate(cat, spawns[spawnIndex].position, spawns[spawnIndex].rotation);
         }

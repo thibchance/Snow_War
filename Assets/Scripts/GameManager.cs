@@ -13,16 +13,14 @@ public class GameManager : MonoBehaviour
     public Text textscore;
     private const string TEXT_SCORE = " ";
 
-    int Ennemie = 100;
-    int boy = 10;
-    int bigBrother = 10;
-    int bigBoy = 10;
-    int Animals = 8;
+    int Ennemie = 0;
+   
     // Use this for initialization
     void Start ()
     {
         textscore.text = TEXT_SCORE + score;
         textscore.text = PlayerPrefs.GetInt("Score", 0).ToString();
+      
     }
 	
 	// Update is called once per frame
@@ -30,19 +28,23 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("score" + score);
         textscore.text = TEXT_SCORE + score;
-
-        if (Ennemie < 5)
+        if(Ennemie == -1)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
+        //if (Ennemie == -1 || GameObject.Find("Boss").GetComponent<BossScript>().GetHEALTH()==0)
+        //{
+           
+        //}
+        
     }
 
     public void Dieboy()
     {
-        Ennemie = Ennemie - boy;
+        Ennemie--;
     }
-    public void Dieanimal()
+    public void Apparait()
     {
-        Ennemie = Ennemie - Animals;
+        Ennemie++;
     }
 }

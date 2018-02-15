@@ -44,7 +44,10 @@ public class BossScript : MonoBehaviour
         wayPoints = firstModeWayPoints;
         nextPosition = wayPoints[Random.Range(0, wayPoints.Length)];
     }
-
+    public int GetHEALTH()
+    {
+        return this.health;
+    }
     // Update is called once per frame
     void Update()
     {

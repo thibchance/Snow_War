@@ -34,7 +34,7 @@ public class DogScript : MonoBehaviour{
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
-            gameManager.Dieanimal();
+            gameManager.Dieboy();
 
 
         }
