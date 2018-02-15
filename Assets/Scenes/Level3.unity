@@ -638,6 +638,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &742655390 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4174534579514902, guid: 7a30c7f15da9b50439e5a13d11eadebc,
+    type: 2}
+  m_PrefabInternal: {fileID: 742655389}
 --- !u!1001 &843504236
 Prefab:
   m_ObjectHideFlags: 0
@@ -14133,6 +14138,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114326046471336640, guid: 9c2a396f87def1343b02e56435b82225,
+        type: 2}
+      propertyPath: TimeTourbillonlimit
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326046471336640, guid: 9c2a396f87def1343b02e56435b82225,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 742655390}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c2a396f87def1343b02e56435b82225, type: 2}
   m_IsPrefabParent: 0

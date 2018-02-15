@@ -306,6 +306,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a30c7f15da9b50439e5a13d11eadebc, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &191723481 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4174534579514902, guid: 7a30c7f15da9b50439e5a13d11eadebc,
+    type: 2}
+  m_PrefabInternal: {fileID: 191723480}
 --- !u!1 &240813131
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +664,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326046471336640, guid: 9c2a396f87def1343b02e56435b82225,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 191723481}
+    - target: {fileID: 114326046471336640, guid: 9c2a396f87def1343b02e56435b82225,
+        type: 2}
+      propertyPath: TimeTourbillonlimit
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c2a396f87def1343b02e56435b82225, type: 2}

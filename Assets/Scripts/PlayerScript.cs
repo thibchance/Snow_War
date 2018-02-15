@@ -163,7 +163,7 @@ public class PlayerScript : MonoBehaviour{
                     Wave.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
                     snowballSpeed = 0.0f;
                     snowballs_use = 2;
-                    Destroy(Wave, 1);
+                    DestroyImmediate(Wave, true);
                     startTimer = true;
                     break; 
                 

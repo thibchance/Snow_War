@@ -345,6 +345,11 @@ Prefab:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 114326046471336640, guid: 9c2a396f87def1343b02e56435b82225,
+        type: 2}
+      propertyPath: TimeTourbillonlimit
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c2a396f87def1343b02e56435b82225, type: 2}
   m_IsPrefabParent: 0
