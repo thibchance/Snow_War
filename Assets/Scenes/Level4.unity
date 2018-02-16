@@ -384,6 +384,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &348805106 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1900899456500816, guid: d0e7f870403cb04439d744f019ed4936,
+    type: 2}
+  m_PrefabInternal: {fileID: 665475799}
+--- !u!114 &348805108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348805106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &372038244
 Prefab:
   m_ObjectHideFlags: 0
@@ -689,6 +705,7 @@ GameObject:
   - component: {fileID: 505419829}
   - component: {fileID: 505419830}
   - component: {fileID: 505419831}
+  - component: {fileID: 505419832}
   m_Layer: 0
   m_Name: Hedge (1)
   m_TagString: Untagged
@@ -780,6 +797,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &505419832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505419828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &557558266
 Prefab:
   m_ObjectHideFlags: 0
@@ -934,6 +962,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &768499347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768499344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &948616865
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +984,7 @@ GameObject:
   - component: {fileID: 948616866}
   - component: {fileID: 948616867}
   - component: {fileID: 948616868}
+  - component: {fileID: 948616869}
   m_Layer: 0
   m_Name: Hedge
   m_TagString: Untagged
@@ -1036,6 +1076,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &948616869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948616865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1084674282 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4967082560566512, guid: 2dd1cc1c2dd50b546b4526cc2e1f9477,
@@ -19048,6 +19099,7 @@ GameObject:
   - component: {fileID: 1530736256}
   - component: {fileID: 1530736257}
   - component: {fileID: 1530736258}
+  - component: {fileID: 1530736259}
   m_Layer: 0
   m_Name: Hedge (2)
   m_TagString: Untagged
@@ -19139,6 +19191,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1530736259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530736255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646794355
 GameObject:
   m_ObjectHideFlags: 0
@@ -19150,6 +19213,7 @@ GameObject:
   - component: {fileID: 1646794356}
   - component: {fileID: 1646794357}
   - component: {fileID: 1646794358}
+  - component: {fileID: 1646794359}
   m_Layer: 0
   m_Name: Hedge (3)
   m_TagString: Untagged
@@ -19241,6 +19305,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1646794359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1646794355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1656062500
 Prefab:
   m_ObjectHideFlags: 0
