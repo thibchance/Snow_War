@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class CatScript : MonoBehaviour {
 
-   
+   public enum CatState
+    {
+        FOLLOW,
+        ATTACK,
+        FLEE
+    }
 
     
     
     private bool touchPlayer =  false;
-    [SerializeField] Transform Player;
+    [SerializeField] Transform target;
     [SerializeField] Transform spawnflee;
-    [SerializeField] float movespeed = 1f;
-    [SerializeField] float speedflee = 1f;
+    [SerializeField] int moveSpeed = 5;
+    private float distance;
+    private CatState catState = CatState.FOLLOW;
     private int health = 1;
-    private int deadpoints = 50;
+    private int deadpoints = 500;
     private PlayerEnergyBar playerEnergy;
     [SerializeField] GameManager gameManager;
     Collider2D cat;
     // Use this for initialization
     void Start ()
     {
-        Player = FindObjectOfType<PlayerScript>().transform;
+        target = FindObjectOfType<PlayerScript>().transform;
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
         gameManager = FindObjectOfType<GameManager>();
         cat = GetComponent<Collider2D>();
@@ -30,22 +36,37 @@ public class CatScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
-        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movespeed * Time.deltaTime);
-
-        if (touchPlayer)
-        {
-           
-            transform.position = Vector2.MoveTowards(transform.position, spawnflee.transform.position, speedflee * Time.deltaTime);
-            cat.isTrigger = true;
-        }
-
         if (health <= 0)
         {
             Destroy(gameObject);
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
-            
+
+        }
+        distance = Vector2.Distance(transform.position, target.transform.position);
+
+        if (distance <= 5)
+        {
+            catState = CatState.ATTACK;
+        }
+        if (touchPlayer)
+        {
+            catState = CatState.FLEE;
+        }
+
+        switch (catState)
+        {
+            case CatState.FOLLOW:
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                break;
+            case CatState.ATTACK:
+                moveSpeed = 8;
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                break;
+            case CatState.FLEE:
+                transform.position = Vector2.MoveTowards(transform.position, spawnflee.transform.position, moveSpeed * Time.deltaTime);
+                cat.isTrigger = true;
+                break;
         }
 
     }
@@ -56,11 +77,9 @@ public class CatScript : MonoBehaviour {
         {
             touchPlayer = true;
         }
-      
-           
-
-        
+  
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SnowballPlayer")
@@ -77,6 +96,11 @@ public class CatScript : MonoBehaviour {
         if (collision.gameObject.tag == "Wave")
         {
             health = health - 2;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            touchPlayer = true;
         }
     }
 }

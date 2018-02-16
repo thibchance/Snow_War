@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class DogScript : MonoBehaviour{
 
-    [SerializeField] float movespeed = 1f;
+    [SerializeField] int moveSpeed = 6;
 
     [SerializeField] GameManager gameManager;
 
@@ -29,7 +29,7 @@ public class DogScript : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movespeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
 
         if (health <= 0)
         {
@@ -37,10 +37,7 @@ public class DogScript : MonoBehaviour{
             playerEnergy.WinEnergy();
             gameManager.score = gameManager.score + deadpoints;
             gameManager.Dieboy();
-
-
         }
-       
     }
         
    

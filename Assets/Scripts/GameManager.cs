@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
 
     [SerializeField]
-    public Text textscore;
+    public Text textScore;
     private const string TEXT_SCORE = " ";
 
     int Ennemie = 0;
@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        textscore.text = TEXT_SCORE + score;
-        textscore.text = PlayerPrefs.GetInt("Score", 0).ToString();
+        textScore.text = TEXT_SCORE + score;
+        textScore.text = PlayerPrefs.GetInt("Score", 0).ToString();
       
     }
 	
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 	void Update ()
     {
         //Debug.Log("score" + score);
-        textscore.text = TEXT_SCORE + score;
+        textScore.text = TEXT_SCORE + score;
         if(level < 4)
         {
             NextLevel();
