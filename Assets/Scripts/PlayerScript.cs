@@ -50,7 +50,8 @@ public class PlayerScript : MonoBehaviour{
         body = GetComponent<Rigidbody2D>();
         player = GetComponent<Collider2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
-        gameManager = FindObjectOfType<GameManager>(); 
+        gameManager = FindObjectOfType<GameManager>();
+        StartCoroutine(Flash());
     }
 
     // Update is called once per frame
@@ -133,7 +134,19 @@ public class PlayerScript : MonoBehaviour{
         
         
     }
-  
+
+    private IEnumerator Flash()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+
+            GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForSeconds(.1f);
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
@@ -173,6 +186,7 @@ public class PlayerScript : MonoBehaviour{
             if (!isincicible)
             {
                 playerHealth.LoseLife();
+                Flash();
             }
             
             Destroy(collision.gameObject);
@@ -183,6 +197,7 @@ public class PlayerScript : MonoBehaviour{
             if (!isincicible)
             {
                 playerHealth.LoseLife();
+                Flash();
             }
             
                 

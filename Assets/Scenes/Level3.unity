@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 172142049}
   - component: {fileID: 172142048}
   - component: {fileID: 172142050}
+  - component: {fileID: 172142051}
   m_Layer: 0
   m_Name: Hedge
   m_TagString: Untagged
@@ -447,6 +448,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &172142051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172142047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &528893232
 Prefab:
   m_ObjectHideFlags: 0
@@ -14010,6 +14022,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &864482949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864482947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4667635b4c2c2624ab016de3aa4c3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1029901270
 Prefab:
   m_ObjectHideFlags: 0
