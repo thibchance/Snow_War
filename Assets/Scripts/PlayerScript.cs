@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour{
     private GameManager gameManager;
     private PlayerHealth playerHealth;
     private bool startTimer = false;
-    private bool isincicible = false;
+    private bool isInvicible = false;
     
     [SerializeField] private float timeSlide;
 
@@ -51,7 +51,7 @@ public class PlayerScript : MonoBehaviour{
         player = GetComponent<Collider2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
         gameManager = FindObjectOfType<GameManager>();
-        StartCoroutine(Flash());
+        
     }
 
     // Update is called once per frame
@@ -113,7 +113,7 @@ public class PlayerScript : MonoBehaviour{
             {
 
                 //animation de gliss
-                isincicible = true;
+                isInvicible = true;
                 
                 speed = speed+2;
 
@@ -125,7 +125,7 @@ public class PlayerScript : MonoBehaviour{
         if (timeSlide== timeSlidemax)
         {
             
-            isincicible = false;
+            isInvicible = false;
             speed = 5;
             timeSlide = 0;
 
@@ -137,7 +137,7 @@ public class PlayerScript : MonoBehaviour{
 
     private IEnumerator Flash()
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 2; i++)
         {
 
             GetComponent<SpriteRenderer>().color = Color.clear;
@@ -183,10 +183,10 @@ public class PlayerScript : MonoBehaviour{
         
         if (collision.gameObject.tag == "SnowballEnemy") 
         {
-            if (!isincicible)
+            if (!isInvicible)
             {
                 playerHealth.LoseLife();
-                Flash();
+                StartCoroutine(Flash());
             }
             
             Destroy(collision.gameObject);
@@ -194,10 +194,10 @@ public class PlayerScript : MonoBehaviour{
 
         if (collision.gameObject.tag == "Dog")
         {
-            if (!isincicible)
+            if (!isInvicible)
             {
                 playerHealth.LoseLife();
-                Flash();
+                StartCoroutine(Flash());
             }
             
                 
