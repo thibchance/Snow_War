@@ -7163,6 +7163,11 @@ Prefab:
       value: 
       objectReference: {fileID: 4000250667509010, guid: e91ddc8558f493147958d9cd6f1509ea,
         type: 2}
+    - target: {fileID: 114190274446360324, guid: 1851e90271fdd574f834e68dd1663248,
+        type: 2}
+      propertyPath: textScore
+      value: 
+      objectReference: {fileID: 1408631715}
     m_RemovedComponents:
     - {fileID: 114177454156104284, guid: 1851e90271fdd574f834e68dd1663248, type: 2}
     - {fileID: 114785282951687200, guid: 1851e90271fdd574f834e68dd1663248, type: 2}

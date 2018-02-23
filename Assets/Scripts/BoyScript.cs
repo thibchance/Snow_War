@@ -34,14 +34,17 @@ public class BoyScript : MonoBehaviour{
     private Transform playerTransform;
     [SerializeField] private int health;
     private int deadpoints = 100;
+
+    private Animator BoyAnimation;
     
     // Use this for initialization
     void Start()
     {
-        playerTransform = FindObjectOfType<PlayerScript>().transform;
+        
         gameManager = FindObjectOfType<GameManager>();
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
-        
+        BoyAnimation = GetComponent<Animator>();
+        playerTransform = FindObjectOfType<PlayerScript>().transform;
     }
 
     // Update is called once per frame
@@ -76,10 +79,13 @@ public class BoyScript : MonoBehaviour{
         switch (enemyState)
         {
             case EnemyState.WALK:
-                transform.position = Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime);
+              transform.position = Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime);
+                BoyAnimation.SetFloat("Speed", moveSpeed);
                 break;
             case EnemyState.ATTACK:
+
                 spawnScript.Attack();
+                BoyAnimation.SetTrigger("IsAttack");
                 break;
         }
        
