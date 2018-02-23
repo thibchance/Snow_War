@@ -13,6 +13,23 @@ public class PlayerScript : MonoBehaviour{
         LENGTH
 
     }
+
+    
+
+    enum SpriteDirection
+    {
+        RIGHT,
+        LEFT,
+        UP,
+        DOWN
+    }
+    private SpriteDirection spriteDirection;
+    public bool mouseRight = false;
+    public bool mouseLeft = false;
+    public bool mouseUp = false;
+    public bool mouseDown = false;
+
+
     private SnowBallType snowbaltype;
 
     [SerializeField] GameObject[] snowballs;
@@ -36,6 +53,7 @@ public class PlayerScript : MonoBehaviour{
     private int ScoreCoins = 100;
     private GameManager gameManager;
     private PlayerHealth playerHealth;
+    private SpriteRenderer spriteRenderer;
     private bool startTimer = false;
     private bool isInvicible = false;
     
@@ -51,6 +69,7 @@ public class PlayerScript : MonoBehaviour{
         player = GetComponent<Collider2D>();
         playerHealth = FindObjectOfType<PlayerHealth>();
         gameManager = FindObjectOfType<GameManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
@@ -66,6 +85,13 @@ public class PlayerScript : MonoBehaviour{
         body.velocity = movement;
         //bool isgliss = false;
 
+        if(mouseRight==true)
+        {
+            Debug.Log("BITE");
+            GetComponent<SpriteRenderer>().color = Color.blue;
+            spriteDirection = SpriteDirection.RIGHT;
+        }
+        
        
          
 
@@ -133,6 +159,37 @@ public class PlayerScript : MonoBehaviour{
         
         
         
+    }
+
+    public void Sprites()
+    {
+        switch(spriteDirection)
+        {
+            case SpriteDirection.RIGHT:
+                mouseLeft = false;
+                mouseDown = false;
+                mouseUp = false;
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                break;
+            case SpriteDirection.LEFT:
+                mouseRight = false;
+                mouseDown = false;
+                mouseUp = false;
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                break;
+            case SpriteDirection.UP:
+                mouseLeft = false;
+                mouseDown = false;
+                mouseRight = false;
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                break;
+            case SpriteDirection.DOWN:
+                mouseLeft = false;
+                mouseRight = false;
+                mouseUp = false;
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                break;
+        }
     }
 
     private IEnumerator Flash()
