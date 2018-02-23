@@ -60,6 +60,7 @@ public class BoyScript : MonoBehaviour{
         if (distance <= throwDistance)
         {
             isAttacking = true;
+            BoyAnimation.SetBool("Isattack",isAttacking);
         }
         else
         {
@@ -85,7 +86,7 @@ public class BoyScript : MonoBehaviour{
             case EnemyState.ATTACK:
 
                 spawnScript.Attack();
-                BoyAnimation.SetTrigger("IsAttack");
+                //BoyAnimation.SetTrigger("IsAttack");
                 break;
         }
        
