@@ -10,6 +10,7 @@ public class BoyScript : MonoBehaviour{
         ATTACK
     }
 
+
     [SerializeField] private GameObject snowballSpawn;
 
     [SerializeField] private GameObject boyAttackZone;
@@ -20,7 +21,9 @@ public class BoyScript : MonoBehaviour{
 
     private float distance;
     [SerializeField] private float throwDistance;
-    private bool isAttacking = false;
+    private bool inFieldofview = false;
+    private bool IsAttacking = false;
+    private float CounterTime = 0.0f;
     private EnemyState enemyState = EnemyState.WALK;
 
     [SerializeField] private SpawnScript spawnScript;
@@ -34,8 +37,12 @@ public class BoyScript : MonoBehaviour{
     private Transform playerTransform;
     [SerializeField] private int health;
     private int deadpoints = 100;
-
+    private float VelocityXright = 1.0f;
+    private float velocityYup = 1.0f;
+    private float VelocityX = -1.0f;
+    private float velocityY = -1.0f;
     private Animator BoyAnimation;
+    private SpriteRenderer render;
     
     // Use this for initialization
     void Start()
@@ -45,12 +52,21 @@ public class BoyScript : MonoBehaviour{
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
         BoyAnimation = GetComponent<Animator>();
         playerTransform = FindObjectOfType<PlayerScript>().transform;
+        render = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        BoyAnimation.SetFloat("VelocityX", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).x);
+        BoyAnimation.SetFloat("VelocityY", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).y);
         move();
+        CounterTime += Time.deltaTime;
+        if(CounterTime>=0.5f)
+        {
+            BoyAnimationAttack(false);
+            CounterTime = 0.0f;
+        }
     }
     public void move()
     {
@@ -59,16 +75,16 @@ public class BoyScript : MonoBehaviour{
 
         if (distance <= throwDistance)
         {
-            isAttacking = true;
-            BoyAnimation.SetBool("Isattack",isAttacking);
+            inFieldofview = true;
+            
         }
         else
         {
-            isAttacking = false;
+            inFieldofview = false;
         }
         //Debug.Log("is Attacking " + isAttacking);
 
-        if (isAttacking)
+        if (inFieldofview)
         {
             enemyState = EnemyState.ATTACK;
         }
@@ -81,10 +97,12 @@ public class BoyScript : MonoBehaviour{
         {
             case EnemyState.WALK:
               transform.position = Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime);
-                BoyAnimation.SetFloat("Speed", moveSpeed);
+                //BoyAnimation.SetFloat("Speed", moveSpeed);
+               
+                
                 break;
             case EnemyState.ATTACK:
-
+       
                 spawnScript.Attack();
                 //BoyAnimation.SetTrigger("IsAttack");
                 break;
@@ -120,4 +138,10 @@ public class BoyScript : MonoBehaviour{
             health = health - 2;
         }
     }
+
+    public void BoyAnimationAttack(bool _action)
+    {
+        BoyAnimation.SetBool("Isattack", _action);
+    }
+  
 }

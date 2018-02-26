@@ -31,12 +31,18 @@ public class SpawnScript : MonoBehaviour{
     }
     public void Attack()
     {
+
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
         {
+            if (gameObject.GetComponentInParent<BoyScript>() != null)
+            {
+               gameObject.GetComponentInParent<BoyScript>().BoyAnimationAttack(true);
+            }
             GameObject Snowball = Instantiate(snowballPrefab, snowballSpawn.position, snowballSpawn.rotation);
             Snowball.GetComponent<Rigidbody2D>().velocity = snowballSpawn.up * snowballSpeed;
             Destroy(Snowball, 5);
             lastTimeThrow = Time.realtimeSinceStartup;
+
         }
     }
 }
