@@ -76,7 +76,63 @@ public class PlayerScript : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        
+        //-----------------------------------------
+        Vector2 Heading = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        float Distance = Heading.magnitude;
+        Debug.Log(Heading / Distance);
+
+        if (Heading.x > 0 && Heading.y > 0)
+        {
+            if (Heading.x > Heading.y)
+            {
+                GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+            if (Heading.y > Heading.x)
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
+        if (Heading.x < 0 && Heading.y < 0)
+        {
+            if (Heading.x < Heading.y)
+            {
+                GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            if (Heading.y < Heading.x)
+            {
+                GetComponent<SpriteRenderer>().color = Color.yellow;
+            }
+        }
+        if (Heading.x > 0 && Heading.y < 0)
+        {
+            if (Heading.x > Heading.y)
+            {
+                GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+            if (Heading.y < 0 && Heading.y < Heading.x)
+            {
+                GetComponent<SpriteRenderer>().color = Color.yellow;
+            }
+        }
+        if (Heading.x < 0 && Heading.y > 0)
+        {
+            if (Heading.x < Heading.y)
+            {
+                GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            if (Heading.y > 0 && Heading.y > Heading.x)
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
+
+
+
+
+
+
+        //-----------------------------------------
+
         Attack();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
