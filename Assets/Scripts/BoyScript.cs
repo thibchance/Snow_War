@@ -58,8 +58,10 @@ public class BoyScript : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        BoyAnimation.SetFloat("VelocityX", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).x);
-        BoyAnimation.SetFloat("VelocityY", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).y);
+        //BoyAnimation.SetFloat("VelocityX", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).x);
+        /*BoyAnimation.SetFloat("VelocityY", Vector2.MoveTowards(transform.position, playerTransform.transform.position, moveSpeed * Time.deltaTime).y)*/;
+        BoyAnimation.SetFloat("VelocityX", playerTransform.transform.position.x);
+        BoyAnimation.SetFloat("VelocityY", playerTransform.transform.position.y);
         move();
         CounterTime += Time.deltaTime;
         if(CounterTime>=0.5f)

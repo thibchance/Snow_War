@@ -24,6 +24,8 @@ public class CatScript : MonoBehaviour {
     private PlayerEnergyBar playerEnergy;
     [SerializeField] GameManager gameManager;
     Collider2D cat;
+    private SpriteRenderer render;
+    private Animator CatAnimation;
     // Use this for initialization
     void Start ()
     {
@@ -31,11 +33,16 @@ public class CatScript : MonoBehaviour {
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
         gameManager = FindObjectOfType<GameManager>();
         cat = GetComponent<Collider2D>();
+        CatAnimation = GetComponent<Animator>();
+        render = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log(catState);
+
+       
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -45,19 +52,21 @@ public class CatScript : MonoBehaviour {
         }
         distance = Vector2.Distance(transform.position, target.transform.position);
 
-        if (distance <= 5)
+        if (distance <= 3)
         {
             catState = CatState.ATTACK;
         }
         if (touchPlayer)
         {
             catState = CatState.FLEE;
+           
         }
 
         switch (catState)
         {
             case CatState.FOLLOW:
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+                CatAnimation.SetFloat("VelocityX", target.transform.position.x);
                 break;
             case CatState.ATTACK:
                 moveSpeed = 8;
@@ -66,6 +75,8 @@ public class CatScript : MonoBehaviour {
             case CatState.FLEE:
                 transform.position = Vector2.MoveTowards(transform.position, spawnflee.transform.position, moveSpeed * Time.deltaTime);
                 cat.isTrigger = true;
+                //render.flipX = touchPlayer;
+                CatAnimation.SetBool("Touch", touchPlayer == true);
                 break;
         }
 
