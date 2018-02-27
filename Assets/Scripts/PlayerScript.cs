@@ -87,7 +87,7 @@ public class PlayerScript : MonoBehaviour{
             {
                 GetComponent<SpriteRenderer>().color = Color.blue;
             }
-            if (Heading.y > Heading.x)
+            else
             {
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour{
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
             }
-            if (Heading.y < Heading.x)
+            else
             {
                 GetComponent<SpriteRenderer>().color = Color.yellow;
             }
@@ -109,7 +109,7 @@ public class PlayerScript : MonoBehaviour{
             {
                 GetComponent<SpriteRenderer>().color = Color.blue;
             }
-            if (Heading.y < 0 && Heading.y < Heading.x)
+            else
             {
                 GetComponent<SpriteRenderer>().color = Color.yellow;
             }
@@ -120,17 +120,11 @@ public class PlayerScript : MonoBehaviour{
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
             }
-            if (Heading.y > 0 && Heading.y > Heading.x)
+            else
             {
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
-
-
-
-
-
-
         //-----------------------------------------
 
         Attack();
@@ -325,3 +319,47 @@ public class PlayerScript : MonoBehaviour{
 
     }
 }
+        //if (Heading.x > 0 && Heading.y > 0)
+        //{
+        //    if (Heading.x > Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.blue;
+        //    }
+        //    if (Heading.y > Heading.x)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.red;
+        //    }
+        //}
+        //if (Heading.x< 0 && Heading.y< 0)
+        //{
+        //    if (Heading.x<Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.green;
+        //    }
+        //    if (Heading.y<Heading.x)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.yellow;
+        //    }
+        //}
+        //if (Heading.x > 0 && Heading.y< 0)
+        //{
+        //    if (Heading.x > Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.blue;
+        //    }
+        //    if (Heading.y< 0 && Heading.y<Heading.x)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.yellow;
+        //    }
+        //}
+        //if (Heading.x< 0 && Heading.y> 0)
+        //{
+        //    if (Heading.x<Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.green;
+        //    }
+        //    if (Heading.y > 0 && Heading.y > Heading.x)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.red;
+        //    }
+        //}
