@@ -42,7 +42,7 @@ public class BoyScript : MonoBehaviour{
     private float VelocityX = -1.0f;
     private float velocityY = -1.0f;
     private Animator BoyAnimation;
-    private SpriteRenderer render;
+   
     
     // Use this for initialization
     void Start()
@@ -52,7 +52,7 @@ public class BoyScript : MonoBehaviour{
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
         BoyAnimation = GetComponent<Animator>();
         playerTransform = FindObjectOfType<PlayerScript>().transform;
-        render = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame

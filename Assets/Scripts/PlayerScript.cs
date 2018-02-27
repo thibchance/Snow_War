@@ -61,6 +61,7 @@ public class PlayerScript : MonoBehaviour{
 
     [SerializeField] private float timeSlidemax = 3;
 
+    private Animator PlayerAnimation;
     Collider2D player;
     // Use this for initialization
     void Start()
@@ -70,6 +71,7 @@ public class PlayerScript : MonoBehaviour{
         playerHealth = FindObjectOfType<PlayerHealth>();
         gameManager = FindObjectOfType<GameManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        PlayerAnimation = GetComponent<Animator>();
         
     }
 
@@ -81,50 +83,58 @@ public class PlayerScript : MonoBehaviour{
         float Distance = Heading.magnitude;
         Debug.Log(Heading / Distance);
 
+        
         if (Heading.x > 0 && Heading.y > 0)
         {
             if (Heading.x > Heading.y)
             {
-                GetComponent<SpriteRenderer>().color = Color.blue;
+                
+                PlayerAnimation.SetTrigger("Right");
             }
             else
             {
-                GetComponent<SpriteRenderer>().color = Color.red;
+               
+                PlayerAnimation.SetTrigger("Up");
             }
         }
         if (Heading.x < 0 && Heading.y < 0)
         {
             if (Heading.x < Heading.y)
             {
-                GetComponent<SpriteRenderer>().color = Color.green;
+               
+                PlayerAnimation.SetTrigger("Left");
             }
             else
             {
-                GetComponent<SpriteRenderer>().color = Color.yellow;
+
+
+
+                
+                PlayerAnimation.SetTrigger("Down");
             }
         }
-        if (Heading.x > 0 && Heading.y < 0)
-        {
-            if (Heading.x > Heading.y)
-            {
-                GetComponent<SpriteRenderer>().color = Color.blue;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = Color.yellow;
-            }
-        }
-        if (Heading.x < 0 && Heading.y > 0)
-        {
-            if (Heading.x < Heading.y)
-            {
-                GetComponent<SpriteRenderer>().color = Color.green;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = Color.red;
-            }
-        }
+        //if (Heading.x > 0 && Heading.y < 0)
+        //{
+        //    if (Heading.x > Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.blue;
+        //    }
+        //    else
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.yellow;
+        //    }
+        //}
+        //if (Heading.x < 0 && Heading.y > 0)
+        //{
+        //    if (Heading.x < Heading.y)
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.green;
+        //    }
+        //    else
+        //    {
+        //        GetComponent<SpriteRenderer>().color = Color.red;
+        //    }
+        //}
         //-----------------------------------------
 
         Attack();
@@ -174,11 +184,19 @@ public class PlayerScript : MonoBehaviour{
     {
         if (Time.realtimeSinceStartup - lastTimeThrow > timeToThrow)
         {
+            if (gameObject.GetComponent<PlayerScript>() != null)
+            {
+                gameObject.GetComponent<PlayerScript>().PlayerAnimationAttack(true);
+            }
             GameObject Snowball = Instantiate(snowballs[snowballs_use], Bulletspawn.position, Bulletspawn.rotation);
             Snowball.GetComponent<Rigidbody2D>().velocity = Bulletspawn.right * snowballSpeed;
             Destroy(Snowball, 5);
             lastTimeThrow = Time.realtimeSinceStartup;
         }
+    }
+    public void PlayerAnimationAttack(bool _action)
+    {
+        PlayerAnimation.SetBool("IsAttack", _action);
     }
     private void Slide()
 
