@@ -15,14 +15,15 @@ public class DogScript : MonoBehaviour{
     private PlayerEnergyBar playerEnergy;
     private int health = 1;
     private int deadpoints = 50;
-  
-    
+
+    private Animator dogAnimation;
     // Use this for initialization
     void Start ()
     {
         playerTransform = FindObjectOfType<PlayerScript>().transform;
         gameManager = FindObjectOfType<GameManager>();
         playerEnergy = FindObjectOfType<PlayerEnergyBar>();
+        dogAnimation = GetComponent<Animator>();
         
     }
 
@@ -30,7 +31,7 @@ public class DogScript : MonoBehaviour{
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
-
+        dogAnimation.SetFloat("VelocityX", playerTransform.transform.position.x);
         if (health <= 0)
         {
             Destroy(gameObject);
