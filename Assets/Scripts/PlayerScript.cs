@@ -269,6 +269,8 @@ public class PlayerScript : MonoBehaviour{
             yield return new WaitForSeconds(.1f);
             GetComponent<SpriteRenderer>().color = Color.red;
             yield return new WaitForSeconds(.1f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(.1f);
         }
     }
 

@@ -19,6 +19,7 @@ public class PlayerEnergyBar : MonoBehaviour {
     [SerializeField] Transform Player;
     [SerializeField] float TimeTourbillon;
     [SerializeField] float TimeTourbillonlimit = 10;
+    
     // Use this for initialization
     void Start ()
     {
@@ -64,7 +65,7 @@ public class PlayerEnergyBar : MonoBehaviour {
         if (Energy==EnergiLimit)
         {
             TimeTourbillon++;
-            Player.transform.Rotate(Vector3.forward, 180.0f * Time.deltaTime) ;
+
             Energy = 0;
            
         }
